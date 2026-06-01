@@ -221,11 +221,11 @@
   }
 
   .section-band-muted {
-    @apply section-band bg-surface;
+    @apply py-16 sm:py-20 lg:py-24 bg-surface;
   }
 
   .section-band-contrast {
-    @apply section-band bg-hero text-hero-foreground;
+    @apply py-16 sm:py-20 lg:py-24 bg-hero text-hero-foreground;
   }
 
   .eyebrow {
