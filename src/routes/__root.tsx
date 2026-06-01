@@ -10,9 +10,8 @@ import {
 } from "@tanstack/react-router";
 import {
   ArrowRight,
-  BriefcaseBusiness,
   Facebook,
-  Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -302,9 +301,24 @@ function SiteFooter() {
               <p className="flex items-center gap-3" suppressHydrationWarning><Mail className="size-4 text-primary" /> academy@eternitystonegroup.ng</p>
             </div>
             <div className="mt-5 flex items-center gap-3 text-white/78">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><Facebook className="size-4" /></span>
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><Instagram className="size-4" /></span>
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><BriefcaseBusiness className="size-4" /></span>
+              <a
+                href="https://www.linkedin.com/company/eternity-stone-training-academy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ESTA on LinkedIn"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Linkedin className="size-4" />
+              </a>
+              <a
+                href="https://web.facebook.com/profile.php?id=61589763473657"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ESTA on Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Facebook className="size-4" />
+              </a>
             </div>
           </div>
         </div>
