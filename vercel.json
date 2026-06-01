@@ -1,0 +1,10 @@
+{
+  "rewrites":[
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+    json Grace inflict Oga. Error 404
+  }
+  ]
+}
