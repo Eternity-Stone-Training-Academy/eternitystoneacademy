@@ -303,7 +303,7 @@ function SiteFooter() {
             <div className="mt-4 space-y-3 text-sm text-white/78">
               <p className="flex items-start gap-3"><MapPin className="mt-0.5 size-4 text-primary" /> Osogbo, Osun State, Nigeria</p>
               <p className="flex items-center gap-3"><Phone className="size-4 text-primary" /> 08032146803</p>
-              <p className="flex items-center gap-3"><Mail className="size-4 text-primary" /> academy@eternitystonegroup.ng</p>
+              <p className="flex items-center gap-3" suppressHydrationWarning><Mail className="size-4 text-primary" /> academy@eternitystonegroup.ng</p>
             </div>
             <div className="mt-5 flex items-center gap-3 text-white/78">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><Facebook className="size-4" /></span>
