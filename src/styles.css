@@ -249,7 +249,7 @@
 
   .nav-shell {
     @apply border-b border-transparent transition-all duration-300;
-    background-color: transparent;
+    background-color: var(--hero);
   }
 
   .nav-shell[data-scrolled="true"] {

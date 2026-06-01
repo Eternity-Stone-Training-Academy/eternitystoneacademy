@@ -10,9 +10,8 @@ import {
 } from "@tanstack/react-router";
 import {
   ArrowRight,
-  BriefcaseBusiness,
   Facebook,
-  Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -22,6 +21,7 @@ import {
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
 import logoAsset from "@/assets/esta-logo.png.asset.json";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -180,16 +180,12 @@ function SiteHeader() {
   }, [location.pathname]);
 
   const isHome = location.pathname === "/";
-  const shellClass = useMemo(
-    () =>
-      isHome && !scrolled
-        ? "nav-shell text-hero-foreground"
-        : "nav-shell text-foreground",
-    [isHome, scrolled],
-  );
+  // Nav background is always dark (hero gradient at home top, solid hero color
+  // when scrolled or on inner pages), so text stays white throughout.
+  const shellTextClass = useMemo(() => "nav-shell text-hero-foreground", []);
 
   return (
-    <header className={`sticky top-0 z-50 ${shellClass}`} data-scrolled={scrolled || !isHome}>
+    <header className={`sticky top-0 z-50 ${shellTextClass}`} data-scrolled={scrolled || !isHome}>
       <div className="site-container">
         <div className="flex min-h-20 items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-3">
@@ -306,9 +302,24 @@ function SiteFooter() {
               <p className="flex items-center gap-3" suppressHydrationWarning><Mail className="size-4 text-primary" /> academy@eternitystonegroup.ng</p>
             </div>
             <div className="mt-5 flex items-center gap-3 text-white/78">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><Facebook className="size-4" /></span>
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><Instagram className="size-4" /></span>
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6"><BriefcaseBusiness className="size-4" /></span>
+              <a
+                href="https://www.linkedin.com/company/eternity-stone-training-academy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ESTA on LinkedIn"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Linkedin className="size-4" />
+              </a>
+              <a
+                href="https://web.facebook.com/profile.php?id=61589763473657"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ESTA on Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Facebook className="size-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -332,6 +343,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <Toaster richColors position="top-center" />
       </div>
     </QueryClientProvider>
   );

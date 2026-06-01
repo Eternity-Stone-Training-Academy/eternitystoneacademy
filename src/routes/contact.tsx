@@ -1,8 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { toast } from "sonner";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
+
+const applicationSchema = z.object({
+  fullName: z.string().trim().min(2, "Please enter your full name").max(100),
+  email: z.string().trim().email("Enter a valid email").max(255),
+  phone: z
+    .string()
+    .trim()
+    .min(7, "Enter a valid phone number")
+    .max(20)
+    .regex(/^[+0-9\s()-]+$/, "Phone can only contain digits and + ( ) -"),
+  track: z.string().min(1, "Select a program"),
+});
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -29,6 +44,36 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const parsed = applicationSchema.safeParse({
+      fullName: String(data.get("fullName") ?? ""),
+      email: String(data.get("email") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      track: String(data.get("track") ?? ""),
+    });
+
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Please check your entries");
+      return;
+    }
+
+    setSubmitting(true);
+    const { fullName, email, phone, track } = parsed.data;
+    const subject = encodeURIComponent(`ESTA Admission Application — ${fullName}`);
+    const body = encodeURIComponent(
+      `Hello ESTA Admissions,\n\nI would like to apply for the program below.\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nSelected Track: ${track}\n\nThank you.`,
+    );
+    window.location.href = `mailto:academy@eternitystonegroup.ng?subject=${subject}&body=${body}`;
+    toast.success("Opening your email app to send your application.");
+    form.reset();
+    setTimeout(() => setSubmitting(false), 600);
+  };
+
   return (
     <div>
       <section className="section-band">
@@ -92,23 +137,23 @@ function ContactPage() {
                 </p>
               </div>
 
-              <form className="mt-8 grid gap-5 sm:grid-cols-2">
+              <form className="mt-8 grid gap-5 sm:grid-cols-2" onSubmit={handleSubmit} noValidate>
                 <label className="flex flex-col gap-2 sm:col-span-1">
                   <span className="text-sm font-medium">Full Name</span>
-                  <input type="text" className="field-shell" placeholder="Enter your full name" />
+                  <input name="fullName" type="text" required className="field-shell" placeholder="Enter your full name" />
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-1">
                   <span className="text-sm font-medium">Email</span>
-                  <input type="email" className="field-shell" placeholder="Enter your email" />
+                  <input name="email" type="email" required className="field-shell" placeholder="Enter your email" />
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-1">
                   <span className="text-sm font-medium">Phone</span>
-                  <input type="tel" className="field-shell" placeholder="Enter your phone number" />
+                  <input name="phone" type="tel" required className="field-shell" placeholder="Enter your phone number" />
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-1">
                   <span className="text-sm font-medium">Selected Track</span>
                   <div className="field-shell items-center">
-                    <select defaultValue="">
+                    <select name="track" required defaultValue="">
                       <option value="" disabled>
                         Select a program
                       </option>
@@ -119,8 +164,8 @@ function ContactPage() {
                   </div>
                 </label>
                 <div className="sm:col-span-2">
-                  <Button type="button" variant="hero" size="xl" className="w-full sm:w-auto">
-                    Apply Now
+                  <Button type="submit" variant="hero" size="xl" disabled={submitting} className="w-full sm:w-auto">
+                    {submitting ? "Submitting…" : "Apply Now"}
                   </Button>
                 </div>
               </form>

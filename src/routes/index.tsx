@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import heroAsset from "@/assets/esta-hero-machining.jpg.asset.json";
 import observeAsset from "@/assets/esta-program-observation.jpg.asset.json";
 import weldingAsset from "@/assets/esta-welding.jpg.asset.json";
-import logoAsset from "@/assets/esta-logo.png.asset.json";
+import ceoAsset from "@/assets/bolaji-jegede.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -185,15 +185,15 @@ function HomePage() {
         <div className="site-container">
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div className="industrial-card overflow-hidden border-white/10 bg-white/6 p-0 text-white">
-              <div className="flex h-full flex-col justify-between p-8 sm:p-10">
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
-                  <img src={logoAsset.url} alt="Eternity Stone logo mark" className="h-11 w-11 object-contain" />
-                </div>
-                <div className="mt-14">
-                  <p className="text-sm uppercase tracking-[0.2em] text-white/64">Leadership note</p>
-                  <p className="mt-2 text-2xl font-bold">Mr. Bolaji Jegede</p>
-                  <p className="text-sm text-white/70">CEO</p>
-                </div>
+              <img
+                src={ceoAsset.url}
+                alt="Portrait of Mr. Bolaji Jegede, CEO of Eternity Stone Training Academy"
+                className="h-80 w-full object-cover object-top sm:h-96"
+              />
+              <div className="p-6 sm:p-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/64">Leadership note</p>
+                <p className="mt-2 text-2xl font-bold">Mr. Bolaji Jegede</p>
+                <p className="text-sm text-white/70">CEO, Eternity Stone Group</p>
               </div>
             </div>
 
