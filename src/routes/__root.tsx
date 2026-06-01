@@ -180,15 +180,9 @@ function SiteHeader() {
   }, [location.pathname]);
 
   const isHome = location.pathname === "/";
-  const shellClass = useMemo(
-    () =>
-      isHome && !scrolled
-        ? "nav-shell text-hero-foreground"
-        : "nav-shell text-foreground",
-    [isHome, scrolled],
-  );
-  const onContrast = (isHome && !scrolled) || scrolled || !isHome;
-  const shellTextClass = onContrast ? "nav-shell text-hero-foreground" : "nav-shell text-foreground";
+  // Nav background is always dark (hero gradient at home top, solid hero color
+  // when scrolled or on inner pages), so text stays white throughout.
+  const shellTextClass = useMemo(() => "nav-shell text-hero-foreground", []);
 
   return (
     <header className={`sticky top-0 z-50 ${shellTextClass}`} data-scrolled={scrolled || !isHome}>
