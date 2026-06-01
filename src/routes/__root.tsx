@@ -187,9 +187,11 @@ function SiteHeader() {
         : "nav-shell text-foreground",
     [isHome, scrolled],
   );
+  const onContrast = (isHome && !scrolled) || scrolled || !isHome;
+  const shellTextClass = onContrast ? "nav-shell text-hero-foreground" : "nav-shell text-foreground";
 
   return (
-    <header className={`sticky top-0 z-50 ${shellClass}`} data-scrolled={scrolled || !isHome}>
+    <header className={`sticky top-0 z-50 ${shellTextClass}`} data-scrolled={scrolled || !isHome}>
       <div className="site-container">
         <div className="flex min-h-20 items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-3">
