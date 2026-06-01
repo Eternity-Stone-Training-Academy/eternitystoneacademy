@@ -104,6 +104,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A modern, responsive website for Eternity Stone Training Academy, showcasing technical skills development programs." },
       { property: "og:description", content: "A modern, responsive website for Eternity Stone Training Academy, showcasing technical skills development programs." },
       { name: "twitter:description", content: "A modern, responsive website for Eternity Stone Training Academy, showcasing technical skills development programs." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1f9586ed-c153-4217-a9ca-d77223a934c1/id-preview-ca8d2d24--6cd04f28-73c6-40f3-b268-a523f31e2a46.lovable.app-1780313354955.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1f9586ed-c153-4217-a9ca-d77223a934c1/id-preview-ca8d2d24--6cd04f28-73c6-40f3-b268-a523f31e2a46.lovable.app-1780313354955.png" },
     ],
     links: [
       {
