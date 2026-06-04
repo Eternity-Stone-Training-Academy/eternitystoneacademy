@@ -1,19 +1,31 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
+  Award,
   BadgeCheck,
-  BookOpen,
-  BriefcaseBusiness,
   CheckCircle2,
-  ChevronRight,
+  Flame,
+  GraduationCap,
+  Leaf,
+  PlugZap,
   Quote,
   Sparkles,
+  SunMedium,
+  Users,
 } from "lucide-react";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import heroAsset from "@/assets/esta-hero-machining.jpg.asset.json";
 import observeAsset from "@/assets/esta-program-observation.jpg.asset.json";
 import weldingAsset from "@/assets/esta-welding.jpg.asset.json";
+import solarAsset from "@/assets/esta-solar.jpg.asset.json";
+import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
 import ceoAsset from "@/assets/bolaji-jegede.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -41,21 +53,145 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "3", label: "Flagship Tracks" },
-  { value: "100%", label: "Practical Focus" },
-  { value: "ITF", label: "Standards Aligned" },
+  { value: "500+", label: "Professionals Trained" },
+  { value: "95%", label: "Completion Rate" },
+  { value: "Expert", label: "Industry Facilitators" },
+  { value: "ITF", label: "Aligned Programs" },
 ] as const;
 
-const pillars = [
-  "Workshop-led instruction with industry equipment",
-  "Career-shaping competencies for artisans and professionals",
-  "Mentorship that connects training to enterprise and employability",
+const whyPoints = [
+  "Hands-on practical workshops",
+  "Industry-experienced facilitators",
+  "International best-practice standards",
+  "Career-ready technical skills",
+  "Certification upon completion",
+] as const;
+
+const programPreviews = [
+  {
+    title: "Welding & Fabrication Technology",
+    icon: Flame,
+    blurb: "Arc, MIG and TIG welding, structural fabrication, and industrial safety.",
+    image: weldingAsset.url,
+  },
+  {
+    title: "Electrical & Instrumentation",
+    icon: PlugZap,
+    blurb: "Wiring, panel installation, instrumentation fundamentals, and fault diagnostics.",
+    image: heroAsset.url,
+  },
+  {
+    title: "Solar Design & Installation",
+    icon: SunMedium,
+    blurb: "Sizing, installation, battery storage, and renewable energy fundamentals.",
+    image: solarAsset.url,
+  },
+  {
+    title: "Computer Aided Design (CAD)",
+    icon: GraduationCap,
+    blurb: "AutoCAD and SolidWorks for 2D drafting, 3D modeling, and industrial design.",
+    image: drillingAsset.url,
+  },
+  {
+    title: "Enterprise Development",
+    icon: Users,
+    blurb: "Business planning, financial management, costing, and market positioning for MSMEs.",
+    image: observeAsset.url,
+  },
+  {
+    title: "Farmers & Agric Extension",
+    icon: Leaf,
+    blurb: "Modern farming techniques, irrigation, value chains, and climate-smart agriculture.",
+    image: observeAsset.url,
+  },
+] as const;
+
+const facilitators = [
+  {
+    name: "Engr. Adewale Bamidele",
+    qualification: "B.Eng Mechanical, COREN Registered",
+    years: "18+ years experience",
+    industry: "Oil & Gas Fabrication",
+  },
+  {
+    name: "Mrs. Folake Adeyemi",
+    qualification: "B.Sc Electrical Engineering, NSE",
+    years: "14+ years experience",
+    industry: "Industrial Instrumentation",
+  },
+  {
+    name: "Mr. Tunde Ogunleye",
+    qualification: "HND Renewable Energy",
+    years: "10+ years experience",
+    industry: "Solar & Clean Energy",
+  },
+  {
+    name: "Dr. Halimat Ibrahim",
+    qualification: "Ph.D Agricultural Extension",
+    years: "20+ years experience",
+    industry: "Agribusiness & Value Chains",
+  },
+] as const;
+
+const testimonials = [
+  {
+    quote: "The training helped me secure a supervisory role within six months.",
+    name: "Former Participant",
+    role: "Welding & Fabrication Track",
+  },
+  {
+    quote: "ESTA's hands-on workshops gave me the confidence to start my own solar installation business.",
+    name: "Former Participant",
+    role: "Solar Design & Installation",
+  },
+  {
+    quote: "The facilitators are real industry professionals — every session felt like a day on the job.",
+    name: "Former Participant",
+    role: "Electrical & Instrumentation",
+  },
+  {
+    quote: "I doubled my farm yield after applying what I learned at the farmers training programme.",
+    name: "Former Participant",
+    role: "Farmers Training Programme",
+  },
+] as const;
+
+const partners = [
+  "ITF",
+  "Osun State Govt",
+  "OAU",
+  "Federal Polytechnic",
+  "NACCIMA",
+  "Eternity Stone Group",
+] as const;
+
+const faqs = [
+  {
+    q: "Who can apply for these programs?",
+    a: "Our programs are open to school leavers, students, artisans, technical professionals, entrepreneurs, and anyone seeking practical, industry-ready skills.",
+  },
+  {
+    q: "Are certificates issued upon completion?",
+    a: "Yes. Every participant who completes the program and meets the assessment requirements receives an ESTA certificate of completion, aligned with ITF standards.",
+  },
+  {
+    q: "Is the training online, physical, or hybrid?",
+    a: "We offer Online, Physical, and Hybrid options for most programs so learners can choose the mode that fits their schedule and location.",
+  },
+  {
+    q: "How long does each program last?",
+    a: "Most flagship technical programs run for 3 months (with a 6-month advanced option for select tracks). Enterprise and agriculture programs run as 2–5 day intensives.",
+  },
+  {
+    q: "What are the fees and payment options?",
+    a: "Tuition varies by program and mode. Please contact admissions for current pricing and available installment options.",
+  },
 ] as const;
 
 function HomePage() {
   return (
     <div>
-      <section className="section-band pb-10 sm:pb-14">
+      <section className="pt-6 pb-10 sm:pt-8 sm:pb-14">
         <div className="site-container">
           <div className="hero-card grid gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-12 lg:py-14">
             <div className="flex flex-col justify-between gap-8">
@@ -68,28 +204,26 @@ function HomePage() {
                   Skills for Today. Competence for Tomorrow.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-                  Bridging the gap between classroom theory and industry reality through immersive, workshop-first learning at Eternity Stone Training Academy.
+                  Gain industry-ready skills in Occupational Safety, Quality Management, and Technical Operations through hands-on training aligned with international standards.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button asChild variant="hero" size="xl">
                     <Link to="/contact">
-                      Enroll Now
+                      Apply for Training
                       <ArrowRight />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="xl" className="border-white/16 bg-white/8 text-hero-foreground hover:bg-white/12 hover:text-hero-foreground">
-                    <Link to="/programs">Explore Programs</Link>
+                    <Link to="/programs">View Courses</Link>
                   </Button>
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="hero-stat-card">
-                    <p className="text-3xl font-extrabold text-primary">{stat.value}</p>
-                    <p className="mt-2 text-sm text-white/72">{stat.label}</p>
-                  </div>
-                ))}
+              <div className="rounded-xl border border-white/12 bg-white/6 p-5 text-white/82">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Built for industry</p>
+                <p className="mt-3 text-sm leading-7">
+                  Workshop-led instruction, certified facilitators, and ITF-aligned curriculum across welding, electrical, solar, CAD, agribusiness and enterprise development.
+                </p>
               </div>
             </div>
 
@@ -109,16 +243,12 @@ function HomePage() {
                     className="h-44 w-full object-cover"
                   />
                 </div>
-                <div className="rounded-xl border border-white/12 bg-white/6 p-5 text-white/82">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Why ESTA</p>
-                  <ul className="mt-4 space-y-3 text-sm leading-7">
-                    {pillars.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <CheckCircle2 className="mt-1 size-4 shrink-0 text-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
+                  <img
+                    src={solarAsset.url}
+                    alt="ESTA learners working with solar equipment"
+                    className="h-44 w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -126,61 +256,108 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-band-muted">
+      {/* Stats */}
+      <section className="py-10 sm:py-14 bg-surface">
         <div className="site-container">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <div className="industrial-card p-8 sm:p-10">
-              <span className="eyebrow">Value proposition</span>
-              <h2 className="max-w-xl text-3xl font-bold leading-tight sm:text-4xl">
-                Degrees tell people what you studied.
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
-                ESTA turns theory into confidence by placing learners in real technical environments that mirror modern production floors.
-              </p>
-            </div>
-            <div className="rounded-xl border border-primary/20 bg-primary p-8 text-primary-foreground shadow-[0_26px_56px_-30px_color-mix(in_oklab,var(--primary)_62%,transparent)] sm:p-10">
-              <span className="eyebrow border-white/12 bg-white/10 text-white/72">Industry reality</span>
-              <h2 className="max-w-xl text-3xl font-bold leading-tight sm:text-4xl">
-                Skills show people what you can DO.
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-8 text-primary-foreground/88">
-                From welding sparks to solar systems and industrial controls, every track is structured to produce measurable capability and workplace readiness.
-              </p>
-            </div>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="industrial-card p-6 text-center">
+                <p className="text-3xl font-extrabold text-primary sm:text-4xl">{s.value}</p>
+                <p className="mt-2 text-sm font-medium text-muted-foreground">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Training Programs preview */}
       <section className="section-band">
-        <div className="site-container grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div className="page-hero overflow-hidden">
-            <img
-              src={observeAsset.url}
-              alt="ESTA learners observing a practical machining session"
-              className="h-full min-h-[320px] w-full object-cover"
-            />
-          </div>
-          <div>
-            <span className="eyebrow">Training impact</span>
-            <h2 className="max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">
-              Structured learning paths designed for technical excellence and enterprise growth.
-            </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                "Workshop immersion with guided supervision",
-                "Evidence-based practical tasks and competence checks",
-                "Professional grooming for employment and self-reliance",
-              ].map((item) => (
-                <div key={item} className="industrial-card p-5">
-                  <BadgeCheck className="size-5 text-primary" />
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground">{item}</p>
-                </div>
-              ))}
+        <div className="site-container">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <span className="eyebrow">Training Programs</span>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+                Eight flagship courses across three professional tracks.
+              </h2>
             </div>
+            <Button asChild variant="hero" size="lg">
+              <Link to="/programs">
+                View Courses
+                <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {programPreviews.map((p) => (
+              <article key={p.title} className="industrial-card overflow-hidden">
+                <img src={p.image} alt={p.title} className="h-44 w-full object-cover" />
+                <div className="p-6">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+                    <p.icon className="size-5 text-primary" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">{p.blurb}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Why Choose */}
+      <section className="section-band-muted">
+        <div className="site-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <span className="eyebrow">Why ESTA</span>
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+              Why Learn With Eternity Stone Academy?
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
+              Every program is designed to translate directly into workplace competence, enterprise growth, and certifiable skill.
+            </p>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {whyPoints.map((p) => (
+              <li key={p} className="industrial-card flex items-start gap-3 p-5">
+                <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
+                <span className="text-sm font-medium leading-7">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Facilitators */}
+      <section className="section-band">
+        <div className="site-container">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Facilitators</span>
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">Meet Our Facilitators</h2>
+            <p className="mt-3 text-base leading-8 text-muted-foreground">
+              Industry practitioners with decades of combined fabrication, instrumentation, renewable energy and agribusiness experience.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {facilitators.map((f) => (
+              <article key={f.name} className="industrial-card overflow-hidden">
+                <div className="flex aspect-square w-full items-center justify-center bg-gradient-to-br from-secondary to-muted">
+                  <Users className="size-16 text-primary/70" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{f.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{f.qualification}</p>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary">{f.years}</p>
+                  <p className="mt-1 text-sm text-foreground">{f.industry}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CEO note */}
       <section className="section-band-contrast">
         <div className="site-container">
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
@@ -205,38 +382,128 @@ function HomePage() {
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/76">
                 ESTA exists to empower the next generation of professionals with the competence, discipline, and confidence required to thrive in industrial environments and build resilient futures.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/76">
-                <span className="rounded-full border border-white/10 bg-white/6 px-4 py-2">Skills-based learning</span>
-                <span className="rounded-full border border-white/10 bg-white/6 px-4 py-2">Industry discipline</span>
-                <span className="rounded-full border border-white/10 bg-white/6 px-4 py-2">Enterprise mindset</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-band-muted">
+        <div className="site-container">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Testimonials</span>
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">What our graduates say</h2>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {testimonials.map((t, i) => (
+              <figure key={i} className="industrial-card flex h-full flex-col p-6">
+                <Quote className="size-8 text-primary" />
+                <blockquote className="mt-4 flex-1 text-sm leading-7 text-foreground">
+                  "{t.quote}"
+                </blockquote>
+                <figcaption className="mt-5 border-t border-border pt-4">
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="py-14">
+        <div className="site-container">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Partners & Corporate Clients
+          </p>
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {partners.map((p) => (
+              <div
+                key={p}
+                className="industrial-card flex h-20 items-center justify-center px-4 text-center text-sm font-semibold text-muted-foreground"
+              >
+                {p}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certification */}
+      <section className="section-band-muted">
+        <div className="site-container">
+          <div className="industrial-card grid gap-8 p-8 sm:p-10 lg:grid-cols-[0.4fr_1fr] lg:items-center">
+            <div className="flex items-center justify-center">
+              <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/60 text-primary-foreground">
+                <Award className="size-16" />
+              </div>
+            </div>
+            <div>
+              <span className="eyebrow">Certification</span>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+                ITF-aligned certificates that travel with you.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
+                Every graduate receives an Eternity Stone Training Academy certificate of completion, aligned with Industrial Training Fund (ITF) standards and recognized by employers across construction, oil & gas, energy, and manufacturing.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-xs font-semibold text-muted-foreground">
+                <span className="rounded-full border border-border bg-card px-3 py-1.5">ITF Aligned</span>
+                <span className="rounded-full border border-border bg-card px-3 py-1.5">Competence-Based</span>
+                <span className="rounded-full border border-border bg-card px-3 py-1.5">Workplace Ready</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="section-band">
         <div className="site-container">
-          <div className="industrial-card flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <span className="eyebrow">Next step</span>
-              <h2 className="text-3xl font-bold sm:text-4xl">Ready to build practical competence?</h2>
-              <p className="mt-3 max-w-2xl text-base leading-8 text-muted-foreground">
-                Review the curriculum, speak with our admissions team, and take the next step toward a future shaped by skill.
+              <span className="eyebrow">FAQ</span>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">Frequently asked questions</h2>
+              <p className="mt-4 text-base leading-8 text-muted-foreground">
+                Everything you need to know before applying. Still have questions? Contact our admissions team.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((f, i) => (
+                <AccordionItem key={i} value={`item-${i}`}>
+                  <AccordionTrigger className="text-base font-semibold">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-sm leading-7 text-muted-foreground">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="pb-20">
+        <div className="site-container">
+          <div className="hero-card flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/74">
+                Apply today
+              </span>
+              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">Build skills that move you forward.</h2>
+              <p className="mt-3 max-w-2xl text-base leading-8 text-white/76">
+                Speak with our admissions team and start your ESTA journey in Osogbo.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="xl">
                 <Link to="/contact">
-                  Start Admission
-                  <ChevronRight />
+                  Apply for Training
+                  <ArrowRight />
                 </Link>
               </Button>
-              <Button asChild variant="quiet" size="xl">
-                <Link to="/about">
-                  Learn More
-                  <BookOpen />
-                </Link>
+              <Button asChild variant="outline" size="xl" className="border-white/16 bg-white/8 text-hero-foreground hover:bg-white/12 hover:text-hero-foreground">
+                <Link to="/programs">View Courses</Link>
               </Button>
             </div>
           </div>
