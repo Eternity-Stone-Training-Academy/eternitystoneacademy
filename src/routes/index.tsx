@@ -2,11 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Award,
-  BadgeCheck,
   CheckCircle2,
   Flame,
   GraduationCap,
-  Leaf,
   PlugZap,
   Quote,
   Sparkles,

@@ -4,7 +4,6 @@ import {
   Clock,
   Download,
   Flame,
-  Leaf,
   MapPin,
   Monitor,
   PenTool,
