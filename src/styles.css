@@ -67,8 +67,9 @@
 }
 
 :root {
-  --font-body: "Inter", sans-serif;
-  --font-heading: "Plus Jakarta Sans", sans-serif;
+
+  --font-body: system-ui, sans-serif;
+  --font-heading: system-ui, sans-serif;
   --radius: 1rem;
   --background: oklch(0.988 0.003 106.43);
   --foreground: oklch(0.225 0.05 262.61);
