@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   Flame,
   GraduationCap,
+  Leaf,
   PlugZap,
   Quote,
   Sparkles,
