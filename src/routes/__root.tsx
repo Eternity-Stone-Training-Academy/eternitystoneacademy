@@ -15,6 +15,7 @@ import {
   Mail,
   MapPin,
   Menu,
+  MessageCircle,
   Phone,
   X,
 } from "lucide-react";
@@ -158,9 +159,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/programs", label: "Programs" },
-  { to: "/contact", label: "Contact Us" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 function SiteHeader() {
@@ -187,20 +188,20 @@ function SiteHeader() {
   return (
     <header className={`sticky top-0 z-50 ${shellTextClass}`} data-scrolled={scrolled || !isHome}>
       <div className="site-container">
-        <div className="flex min-h-20 items-center justify-between gap-6">
+        <div className="flex min-h-16 items-center justify-between gap-6 py-2">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Eternity Stone Training Academy logo" className="h-12 w-12 rounded-lg object-cover bg-white/95 p-1.5" />
+            <img src={logoAsset.url} alt="Eternity Stone Training Academy logo" className="h-10 w-10 rounded-md object-contain bg-white/95 p-1" />
             <div className="flex flex-col leading-tight">
-              <span className="font-heading text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
                 Eternity Stone
               </span>
-              <span className="font-heading text-base font-bold sm:text-lg">
+              <span className="font-heading text-sm font-bold sm:text-base">
                 Training Academy
               </span>
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -214,10 +215,10 @@ function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
-            <Button asChild variant="hero" size="xl">
+          <div className="hidden md:block">
+            <Button asChild variant="hero" size="lg">
               <Link to="/contact">
-                Enroll Now
+                Apply for Training
                 <ArrowRight />
               </Link>
             </Button>
@@ -225,7 +226,7 @@ function SiteHeader() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card text-foreground lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-foreground md:hidden"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
@@ -234,7 +235,7 @@ function SiteHeader() {
         </div>
 
         {menuOpen ? (
-          <div className="pb-5 lg:hidden">
+          <div className="pb-5 md:hidden">
             <div className="industrial-card flex flex-col gap-3 p-4">
               {navItems.map((item) => (
                 <Link
@@ -248,7 +249,7 @@ function SiteHeader() {
                 </Link>
               ))}
               <Button asChild variant="hero" size="xl" className="w-full">
-                <Link to="/contact">Enroll Now</Link>
+                <Link to="/contact">Apply for Training</Link>
               </Button>
             </div>
           </div>
@@ -343,6 +344,16 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <a
+          href="https://wa.me/2348032146803?text=Hello%20ESTA%2C%20I%27d%20like%20to%20chat%20with%20an%20advisor."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with an Advisor on WhatsApp"
+          className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.55)] transition-transform hover:scale-[1.03]"
+        >
+          <MessageCircle className="size-5" />
+          <span className="hidden sm:inline">Chat with an Advisor</span>
+        </a>
         <Toaster richColors position="top-center" />
       </div>
     </QueryClientProvider>
