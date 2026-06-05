@@ -234,14 +234,14 @@ function HomePage() {
               <div className="grid gap-4">
                 <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
                   <img
-                    src={weldingAsset.url}
+                    src={courseImages.welding}
                     alt="ESTA welding trainee demonstrating practical fabrication skills"
                     className="h-44 w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
                   <img
-                    src={solarAsset.url}
+                    src={courseImages.solar}
                     alt="ESTA learners working with solar equipment"
                     className="h-44 w-full object-cover"
                   />
