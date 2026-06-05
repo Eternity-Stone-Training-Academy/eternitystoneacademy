@@ -19,11 +19,8 @@ import {
 
 import { Button } from "@/components/ui/button";
 import prospectusAsset from "@/assets/esta-prospectus-2026.pdf.asset.json";
-import weldingAsset from "@/assets/esta-welding.jpg.asset.json";
-import heroAsset from "@/assets/esta-hero-machining.jpg.asset.json";
 import solarAsset from "@/assets/esta-solar.jpg.asset.json";
-import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
-import observeAsset from "@/assets/esta-program-observation.jpg.asset.json";
+import { courseImages } from "@/lib/course-images";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -78,7 +75,7 @@ const tracks: Track[] = [
         subtitle: "AutoCAD & SolidWorks",
         duration: "3 Months",
         icon: PenTool,
-        image: drillingAsset.url,
+        image: courseImages.cad,
         highlights: [
           "2D drafting and detailing",
           "3D modeling and simulation",
@@ -103,7 +100,7 @@ const tracks: Track[] = [
         title: "Welding & Fabrication Technology",
         duration: "3 Months (Basic) / 6 Months (Advanced)",
         icon: Flame,
-        image: weldingAsset.url,
+        image: courseImages.welding,
         highlights: [
           "Arc welding",
           "MIG and TIG welding",
@@ -123,7 +120,7 @@ const tracks: Track[] = [
         title: "Electrical & Instrumentation",
         duration: "3 Months (Basic) / 6 Months (Advanced)",
         icon: PlugZap,
-        image: heroAsset.url,
+        image: courseImages.electrical,
         highlights: [
           "Residential and industrial wiring",
           "Electrical panel installation",
@@ -155,7 +152,7 @@ const tracks: Track[] = [
         title: "Solar Design & Installation",
         duration: "3 Months",
         icon: SunMedium,
-        image: solarAsset.url,
+        image: courseImages.solar,
         highlights: [
           "Solar system components",
           "System sizing and design",
@@ -180,7 +177,7 @@ const tracks: Track[] = [
         title: "Pottery & Ceramics Technology",
         duration: "3 Months",
         icon: Shapes,
-        image: observeAsset.url,
+        image: courseImages.pottery,
         highlights: [
           "Clay preparation techniques",
           "Kiln operations",
@@ -211,7 +208,7 @@ const tracks: Track[] = [
         subtitle: "For New and Existing MSMEs",
         duration: "2-3 Days Intensive Programme",
         icon: TrendingUp,
-        image: observeAsset.url,
+        image: courseImages.enterprise,
         highlights: [
           "Business planning and strategy",
           "Financial management",
@@ -237,7 +234,7 @@ const tracks: Track[] = [
         title: "Farmers Training Programme",
         duration: "2-3 Days Intensive Programme (Expandable)",
         icon: Sprout,
-        image: observeAsset.url,
+        image: courseImages.farmers,
         highlights: [
           "Improved seedlings and animal breeds",
           "Modern farming techniques",
@@ -262,7 +259,7 @@ const tracks: Track[] = [
         title: "Agricultural Extension Training",
         duration: "2-5 Days (Customizable)",
         icon: Tractor,
-        image: observeAsset.url,
+        image: courseImages.extension,
         highlights: [
           "Farmer engagement strategies",
           "Technology adoption",

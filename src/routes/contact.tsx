@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
+import { courseOptions } from "@/lib/course-images";
 
 const applicationSchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name").max(100),
@@ -68,8 +69,9 @@ function ContactPage() {
     const body = encodeURIComponent(
       `Hello ESTA Admissions,\n\nI would like to apply for the program below.\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nSelected Track: ${track}\n\nThank you.`,
     );
-    window.location.href = `mailto:academy@eternitystonegroup.ng?subject=${subject}&body=${body}`;
-    toast.success("Opening your email app to send your application.");
+    const mailto = `mailto:academy@eternitystonegroup.ng?subject=${subject}&body=${body}`;
+    window.open(mailto, "_blank", "noopener,noreferrer");
+    toast.success("Opening your email app in a new tab to send your application.");
     form.reset();
     setTimeout(() => setSubmitting(false), 600);
   };
@@ -157,9 +159,9 @@ function ContactPage() {
                       <option value="" disabled>
                         Select a program
                       </option>
-                      <option>Welding & Fabrication Technology</option>
-                      <option>Electrical & Instrumentation</option>
-                      <option>Solar Design & Installation</option>
+                      {courseOptions.map((c) => (
+                        <option key={c}>{c}</option>
+                      ))}
                     </select>
                   </div>
                 </label>
