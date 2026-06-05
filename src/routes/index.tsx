@@ -21,11 +21,8 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import heroAsset from "@/assets/esta-hero-machining.jpg.asset.json";
-import observeAsset from "@/assets/esta-program-observation.jpg.asset.json";
-import weldingAsset from "@/assets/esta-welding.jpg.asset.json";
-import solarAsset from "@/assets/esta-solar.jpg.asset.json";
-import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
 import ceoAsset from "@/assets/bolaji-jegede.jpg.asset.json";
+import { courseImages } from "@/lib/course-images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,37 +68,37 @@ const programPreviews = [
     title: "Welding & Fabrication Technology",
     icon: Flame,
     blurb: "Arc, MIG and TIG welding, structural fabrication, and industrial safety.",
-    image: weldingAsset.url,
+    image: courseImages.welding,
   },
   {
     title: "Electrical & Instrumentation",
     icon: PlugZap,
     blurb: "Wiring, panel installation, instrumentation fundamentals, and fault diagnostics.",
-    image: heroAsset.url,
+    image: courseImages.electrical,
   },
   {
     title: "Solar Design & Installation",
     icon: SunMedium,
     blurb: "Sizing, installation, battery storage, and renewable energy fundamentals.",
-    image: solarAsset.url,
+    image: courseImages.solar,
   },
   {
     title: "Computer Aided Design (CAD)",
     icon: GraduationCap,
     blurb: "AutoCAD and SolidWorks for 2D drafting, 3D modeling, and industrial design.",
-    image: drillingAsset.url,
+    image: courseImages.cad,
   },
   {
     title: "Enterprise Development",
     icon: Users,
     blurb: "Business planning, financial management, costing, and market positioning for MSMEs.",
-    image: observeAsset.url,
+    image: courseImages.enterprise,
   },
   {
     title: "Farmers & Agric Extension",
     icon: Leaf,
     blurb: "Modern farming techniques, irrigation, value chains, and climate-smart agriculture.",
-    image: observeAsset.url,
+    image: courseImages.farmers,
   },
 ] as const;
 
@@ -237,14 +234,14 @@ function HomePage() {
               <div className="grid gap-4">
                 <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
                   <img
-                    src={weldingAsset.url}
+                    src={courseImages.welding}
                     alt="ESTA welding trainee demonstrating practical fabrication skills"
                     className="h-44 w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
                   <img
-                    src={solarAsset.url}
+                    src={courseImages.solar}
                     alt="ESTA learners working with solar equipment"
                     className="h-44 w-full object-cover"
                   />

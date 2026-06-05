@@ -192,6 +192,17 @@
   h6 {
     font-family: var(--font-heading);
     letter-spacing: 0;
+    color: var(--color-foreground);
+    font-weight: 800;
+  }
+
+  h1 { font-weight: 800; }
+  h2 { font-weight: 800; }
+  h3 { font-weight: 700; }
+  .section-band h2,
+  .section-band-muted h2,
+  .pb-20 h2 {
+    color: color-mix(in oklab, var(--primary) 55%, var(--color-foreground));
   }
 
   ::selection {
