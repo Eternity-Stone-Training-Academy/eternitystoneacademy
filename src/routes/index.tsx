@@ -272,9 +272,12 @@ function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl">
               <span className="eyebrow">Training Programs</span>
-              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-                Eight flagship courses across three professional tracks.
+              <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+                Twenty courses across three professional Schools.
               </h2>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                SVES · SAAS · SSES — plus the upcoming CAMET flagship center launching January 2027.
+              </p>
             </div>
             <Button asChild variant="hero" size="lg">
               <Link to="/programs">
