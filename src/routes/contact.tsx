@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
-import { courseOptions } from "@/lib/course-images";
+import { allCourseTitles } from "@/lib/courses";
 
 const applicationSchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name").max(100),
@@ -65,13 +65,9 @@ function ContactPage() {
 
     setSubmitting(true);
     const { fullName, email, phone, track } = parsed.data;
-    const subject = encodeURIComponent(`ESTA Admission Application — ${fullName}`);
-    const body = encodeURIComponent(
-      `Hello ESTA Admissions,\n\nI would like to apply for the program below.\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nSelected Track: ${track}\n\nThank you.`,
-    );
-    const mailto = `mailto:academy@eternitystonegroup.ng?subject=${subject}&body=${body}`;
-    window.open(mailto, "_blank", "noopener,noreferrer");
-    toast.success("Opening your email app in a new tab to send your application.");
+    const qs = new URLSearchParams({ name: fullName, email, phone, track }).toString();
+    window.open(`/application-received?${qs}`, "_blank", "noopener,noreferrer");
+    toast.success("Application submitted — a confirmation tab has been opened.");
     form.reset();
     setTimeout(() => setSubmitting(false), 600);
   };
@@ -159,7 +155,7 @@ function ContactPage() {
                       <option value="" disabled>
                         Select a program
                       </option>
-                      {courseOptions.map((c) => (
+                      {allCourseTitles.map((c) => (
                         <option key={c}>{c}</option>
                       ))}
                     </select>
@@ -167,7 +163,7 @@ function ContactPage() {
                 </label>
                 <div className="sm:col-span-2">
                   <Button type="submit" variant="hero" size="xl" disabled={submitting} className="w-full sm:w-auto">
-                    {submitting ? "Submitting…" : "Apply Now"}
+                    {submitting ? "Submitting…" : "Apply for Training"}
                   </Button>
                 </div>
               </form>
