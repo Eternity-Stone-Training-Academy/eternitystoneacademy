@@ -111,10 +111,7 @@ function CourseCard({ course }: { course: Course }) {
 
         <div className="mt-auto pt-6">
           <Button asChild variant="hero" size="lg" className="w-full">
-            <Link
-              to="/contact"
-              search={{ track: course.title } as never}
-            >
+            <Link to="/contact">
               Apply for Training
               <ArrowRight />
             </Link>
