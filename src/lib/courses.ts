@@ -21,6 +21,28 @@ export type School = {
 const img = (id: string) =>
   `https://images.unsplash.com/${id}?w=1200&auto=format&fit=crop&q=70`;
 
+import camet1 from "@/assets/camet/Merged_1_and_more_1.jpg.asset.json";
+import camet3 from "@/assets/camet/Merged_1_and_more_3.jpg.asset.json";
+import camet4 from "@/assets/camet/Merged_1_and_more_4.jpg.asset.json";
+import camet5 from "@/assets/camet/Merged_1_and_more_5.jpg.asset.json";
+import camet6 from "@/assets/camet/Merged_1_and_more_6.jpg.asset.json";
+import cametBh1 from "@/assets/camet/Merged_Backhoe_and_more_1.jpg.asset.json";
+import cametBh2 from "@/assets/camet/Merged_Backhoe_and_more_2.jpg.asset.json";
+import cametBh3 from "@/assets/camet/Merged_Backhoe_and_more_3.jpg.asset.json";
+import cametBh4 from "@/assets/camet/Merged_Backhoe_and_more_4.jpg.asset.json";
+
+export const cametGallery: { url: string; caption: string }[] = [
+  { url: camet1.url, caption: "High-horsepower utility tractor — cab class" },
+  { url: camet5.url, caption: "Compact 4WD utility tractor" },
+  { url: camet4.url, caption: "Mid-range tractor with canopy" },
+  { url: camet6.url, caption: "Walking tractor with rotary tiller" },
+  { url: camet3.url, caption: "Two-wheel diesel walking tractor" },
+  { url: cametBh3.url, caption: "Combine harvester (rice & grain)" },
+  { url: cametBh4.url, caption: "Tracked combine harvester" },
+  { url: cametBh1.url, caption: "Wheel loader / backhoe combination" },
+  { url: cametBh2.url, caption: "Compact backhoe loader" },
+];
+
 export const schools: School[] = [
   {
     id: "sves",
@@ -206,7 +228,7 @@ export const camet = {
   badge: "FLAGSHIP CENTER — LAUNCHING JANUARY 2027",
   summary:
     "Building Africa's next generation of agricultural machinery professionals. Specializing in indigenous technical capacity, tractor assembly, heavy diagnostics, and fleet entrepreneurship.",
-  image: img("photo-1530267981375-f0de937f5f13"),
+  image: camet1.url,
   programs: [
     { title: "Tractor Assembly Technology", duration: "3 Months Certificate / 6 Months Advanced" },
     { title: "Tractor Diagnostics & Maintenance", duration: "1 Month Basic / 3 Months Professional" },

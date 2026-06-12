@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import {
   ArrowRight,
+  ChevronDown,
   Facebook,
   Linkedin,
   Mail,
@@ -164,6 +165,12 @@ const navItems = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+const schoolLinks = [
+  { hash: "sves", label: "SVES — Vocational & Entrepreneurship" },
+  { hash: "saas", label: "SAAS — Agriculture & Agro-Allied" },
+  { hash: "sses", label: "SSES — Sustainability & ESG" },
+] as const;
+
 function SiteHeader() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -202,17 +209,56 @@ function SiteHeader() {
           </Link>
 
           <nav className="hidden items-center gap-7 md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                activeProps={{ className: "text-primary" }}
-                activeOptions={{ exact: item.to === "/" }}
-                className="text-sm font-medium transition-colors hover:text-primary"
+            <Link
+              to="/"
+              activeProps={{ className: "text-primary" }}
+              activeOptions={{ exact: true }}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Home
+            </Link>
+            <div className="group relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary"
               >
-                {item.label}
-              </Link>
-            ))}
+                Schools <ChevronDown className="size-4" />
+              </button>
+              <div className="invisible absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl">
+                  {schoolLinks.map((s) => (
+                    <Link
+                      key={s.hash}
+                      to="/programs"
+                      hash={s.hash}
+                      className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/programs"
+                    className="rounded-lg border-t border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:bg-accent"
+                  >
+                    View all programs →
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <Link
+              to="/about"
+              activeProps={{ className: "text-primary" }}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              About
+            </Link>
+            <Link
+              to="/contact"
+              activeProps={{ className: "text-primary" }}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Contact
+            </Link>
           </nav>
 
           <div className="hidden md:block">
@@ -248,6 +294,19 @@ function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
+              <div className="border-t border-border pt-2">
+                <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">Schools</p>
+                {schoolLinks.map((s) => (
+                  <Link
+                    key={s.hash}
+                    to="/programs"
+                    hash={s.hash}
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
               <Button asChild variant="hero" size="xl" className="w-full">
                 <Link to="/contact">Apply for Training</Link>
               </Button>
