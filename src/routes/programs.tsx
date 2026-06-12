@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/dialog";
 import prospectusAsset from "@/assets/esta-prospectus-2026.pdf.asset.json";
 import solarAsset from "@/assets/esta-solar.jpg.asset.json";
-import { camet, schools, type Course } from "@/lib/courses";
+import { camet, cametGallery, schools, type Course } from "@/lib/courses";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -190,6 +190,20 @@ function CametDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (v: 
 
           <div>
             <h4 className="text-sm font-extrabold uppercase tracking-[0.16em] text-primary">
+              Equipment & machinery gallery
+            </h4>
+            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {cametGallery.map((g) => (
+                <figure key={g.url} className="industrial-card overflow-hidden p-0">
+                  <img src={g.url} alt={g.caption} loading="lazy" className="h-32 w-full object-cover sm:h-36" />
+                  <figcaption className="px-3 py-2 text-[11px] font-medium text-muted-foreground">{g.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-extrabold uppercase tracking-[0.16em] text-primary">
               Strategic Partnership Opportunities
             </h4>
             <ul className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -262,7 +276,7 @@ function ProgramsPage() {
       </section>
 
       {schools.map((school, idx) => (
-        <section key={school.id} className={idx % 2 === 1 ? "section-band-muted" : "pb-20"}>
+        <section key={school.id} id={school.id} className={idx % 2 === 1 ? "section-band-muted scroll-mt-24" : "pb-20 scroll-mt-24"}>
           <div className="site-container">
             <div className="flex flex-col gap-3 border-l-4 border-primary pl-5">
               <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">
