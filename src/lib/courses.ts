@@ -228,7 +228,7 @@ export const camet = {
   badge: "FLAGSHIP CENTER — LAUNCHING JANUARY 2027",
   summary:
     "Building Africa's next generation of agricultural machinery professionals. Specializing in indigenous technical capacity, tractor assembly, heavy diagnostics, and fleet entrepreneurship.",
-  image: img("photo-1530267981375-f0de937f5f13"),
+  image: camet1.url,
   programs: [
     { title: "Tractor Assembly Technology", duration: "3 Months Certificate / 6 Months Advanced" },
     { title: "Tractor Diagnostics & Maintenance", duration: "1 Month Basic / 3 Months Professional" },
