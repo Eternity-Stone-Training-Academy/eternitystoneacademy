@@ -4,17 +4,18 @@ import { ArrowRight, Lightbulb, Target, Trees, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import drillingAsset from "@/assets/esta-drilling.jpg.asset.json";
 import observeAsset from "@/assets/esta-program-observation.jpg.asset.json";
+import { facilitators } from "@/lib/facilitators";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About ESTA | Eternity Stone Training Academy" },
+      { title: "About Us | Eternity Stone Training Academy" },
       {
         name: "description",
         content:
           "Learn about ESTA's mission, vision, and focus areas for practical technical capacity development in Osun State.",
       },
-      { property: "og:title", content: "About ESTA | Eternity Stone Training Academy" },
+      { property: "og:title", content: "About Us | Eternity Stone Training Academy" },
       {
         property: "og:description",
         content:
@@ -56,7 +57,7 @@ function AboutPage() {
       <section className="section-band">
         <div className="site-container grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <div>
-            <span className="eyebrow">About ESTA</span>
+            <span className="eyebrow">About Us</span>
             <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
               Premium technical training shaped by industry reality.
             </h1>
@@ -152,6 +153,59 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Meet Our Facilitators */}
+      <section className="section-band-muted">
+        <div className="site-container">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Our team</span>
+            <h2 className="text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+              Meet Our Facilitators
+            </h2>
+            <p className="mt-3 text-base leading-8 text-muted-foreground">
+              Industry practitioners with decades of combined fabrication, welding, electrical and solar installation experience.
+            </p>
+          </div>
+
+          {/* Static grid (md+) */}
+          <div className="mt-10 hidden gap-6 md:grid md:grid-cols-2 xl:grid-cols-4">
+            {facilitators.map((f) => (
+              <FacilitatorCard key={f.name} f={f} />
+            ))}
+          </div>
+
+          {/* Moving marquee (mobile) */}
+          <div className="mt-10 overflow-hidden md:hidden" aria-label="Facilitators carousel">
+            <div className="marquee">
+              {[...facilitators, ...facilitators].map((f, i) => (
+                <div key={`${f.name}-${i}`} className="w-64 shrink-0">
+                  <FacilitatorCard f={f} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+function FacilitatorCard({ f }: { f: { name: string; role: string; years: string; image: string } }) {
+  return (
+    <article className="industrial-card overflow-hidden">
+      <div className="aspect-[3/4] w-full overflow-hidden bg-muted">
+        <img
+          src={f.image}
+          alt={`Portrait of ${f.name}`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-extrabold text-foreground">{f.name}</h3>
+        <p className="mt-1 text-sm leading-6 text-muted-foreground">{f.role}</p>
+        <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.14em] text-primary">{f.years}</p>
+      </div>
+    </article>
   );
 }

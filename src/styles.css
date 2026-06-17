@@ -296,3 +296,23 @@
     @apply h-full w-full bg-transparent outline-none;
   }
 }
+
+@keyframes esta-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  animation: esta-marquee 30s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+}

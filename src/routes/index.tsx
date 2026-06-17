@@ -192,14 +192,14 @@ function HomePage() {
           <div className="hero-card grid gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-12 lg:py-14">
             <div className="flex flex-col justify-between gap-8">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/74">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
                   <Sparkles className="size-3.5 text-primary" />
                   Professional technical capacity development
                 </span>
-                <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+                <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-5xl lg:text-6xl">
                   Skills for Today. Competence for Tomorrow.
                 </h1>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-8 text-white/92 sm:text-lg">
                   Gain industry-ready skills in Occupational Safety, Quality Management, and Technical Operations through hands-on training aligned with international standards.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -215,9 +215,9 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-white/12 bg-white/6 p-5 text-white/82">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Built for industry</p>
-                <p className="mt-3 text-sm leading-7">
+              <div className="rounded-xl border border-white/20 bg-white/10 p-5 text-white">
+                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-primary">Built for industry</p>
+                <p className="mt-3 text-sm leading-7 text-white/95">
                   Workshop-led instruction, certified facilitators, and ITF-aligned curriculum across welding, electrical, solar, CAD, agribusiness and enterprise development.
                 </p>
               </div>
