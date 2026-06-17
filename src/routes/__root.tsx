@@ -161,7 +161,7 @@ function RootShell({ children }: { children: ReactNode }) {
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/programs", label: "Programs" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About Us" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -217,6 +217,13 @@ function SiteHeader() {
             >
               Home
             </Link>
+            <Link
+              to="/about"
+              activeProps={{ className: "text-primary" }}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              About Us
+            </Link>
             <div className="group relative">
               <button
                 type="button"
@@ -245,13 +252,6 @@ function SiteHeader() {
                 </div>
               </div>
             </div>
-            <Link
-              to="/about"
-              activeProps={{ className: "text-primary" }}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              About
-            </Link>
             <Link
               to="/contact"
               activeProps={{ className: "text-primary" }}
@@ -384,7 +384,7 @@ function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-white/58">
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/70">
           © {new Date().getFullYear()} Eternity Stone Training Academy. All rights reserved.
         </div>
       </div>
