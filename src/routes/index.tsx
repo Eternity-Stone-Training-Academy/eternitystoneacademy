@@ -102,32 +102,6 @@ const programPreviews = [
   },
 ] as const;
 
-const facilitators = [
-  {
-    name: "Engr. Adewale Bamidele",
-    qualification: "B.Eng Mechanical, COREN Registered",
-    years: "18+ years experience",
-    industry: "Oil & Gas Fabrication",
-  },
-  {
-    name: "Mrs. Folake Adeyemi",
-    qualification: "B.Sc Electrical Engineering, NSE",
-    years: "14+ years experience",
-    industry: "Industrial Instrumentation",
-  },
-  {
-    name: "Mr. Tunde Ogunleye",
-    qualification: "HND Renewable Energy",
-    years: "10+ years experience",
-    industry: "Solar & Clean Energy",
-  },
-  {
-    name: "Dr. Halimat Ibrahim",
-    qualification: "Ph.D Agricultural Extension",
-    years: "20+ years experience",
-    industry: "Agribusiness & Value Chains",
-  },
-] as const;
 
 const testimonials = [
   {
@@ -327,34 +301,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Facilitators */}
-      <section className="section-band">
-        <div className="site-container">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Facilitators</span>
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">Meet Our Facilitators</h2>
-            <p className="mt-3 text-base leading-8 text-muted-foreground">
-              Industry practitioners with decades of combined fabrication, instrumentation, renewable energy and agribusiness experience.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {facilitators.map((f) => (
-              <article key={f.name} className="industrial-card overflow-hidden">
-                <div className="flex aspect-square w-full items-center justify-center bg-gradient-to-br from-secondary to-muted">
-                  <Users className="size-16 text-primary/70" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold">{f.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{f.qualification}</p>
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary">{f.years}</p>
-                  <p className="mt-1 text-sm text-foreground">{f.industry}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CEO note */}
       <section className="section-band-contrast">
