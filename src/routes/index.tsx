@@ -10,6 +10,7 @@ import {
   Quote,
   Sparkles,
   SunMedium,
+  Users,
 } from "lucide-react";
 
 import {
