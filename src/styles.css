@@ -199,11 +199,28 @@
   h1 { font-weight: 800; }
   h2 { font-weight: 800; }
   h3 { font-weight: 700; }
+
+  .section-band h1,
   .section-band h2,
+  .section-band h3,
+  .section-band-muted h1,
   .section-band-muted h2,
-  .pb-20 h2 {
+  .section-band-muted h3,
+  .pb-20 h1,
+  .pb-20 h2,
+  .pb-20 h3 {
     color: color-mix(in oklab, var(--primary) 55%, var(--color-foreground));
+    text-align: center;
   }
+
+  .section-band-contrast h1,
+  .section-band-contrast h2,
+  .section-band-contrast h3,
+  .hero-card h1,
+  .hero-card h2 {
+    text-align: center;
+  }
+
 
   ::selection {
     background-color: color-mix(in oklab, var(--primary) 32%, white);

@@ -21,18 +21,18 @@ export const facilitators: Facilitator[] = [
     name: "Engr. Oladimeji Oladipo",
     role: "Electrical & Solar Installation Engineer",
     years: "15+ years experience",
-    image: oladimeji.url,
+    image: timilehin.url,
   },
   {
     name: "Mr. Timilehin Adedoyin",
     role: "Welding & Fabrication Technician",
     years: "10+ years experience",
-    image: timilehin.url,
+    image: ayomide.url,
   },
   {
     name: "Mr. Ayomide Abioye",
     role: "Electrical & Solar Installation Technician",
     years: "13+ years experience",
-    image: ayomide.url,
+    image: oladimeji.url,
   },
 ];
