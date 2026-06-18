@@ -244,6 +244,12 @@ function SiteHeader() {
                     </Link>
                   ))}
                   <Link
+                    to="/camet"
+                    className="rounded-lg px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-accent"
+                  >
+                    CAMET — Flagship Center (Jan 2027)
+                  </Link>
+                  <Link
                     to="/programs"
                     className="rounded-lg border-t border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:bg-accent"
                   >
@@ -306,6 +312,12 @@ function SiteHeader() {
                     {s.label}
                   </Link>
                 ))}
+                <Link
+                  to="/camet"
+                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-accent"
+                >
+                  CAMET — Flagship Center (Jan 2027)
+                </Link>
               </div>
               <Button asChild variant="hero" size="xl" className="w-full">
                 <Link to="/contact">Apply for Training</Link>
@@ -337,6 +349,10 @@ function SiteFooter() {
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.18em] text-primary">
               Learn it. Live it. Build the future.
             </p>
+            <div className="rounded-lg border border-white/12 bg-white/6 p-4 text-xs leading-6 text-white/78">
+              <p className="font-semibold text-white">Eternity Stone Training Academy Limited</p>
+              <p>Training & Capacity Development Arm of Eternity Stone Group. CAC-registered in Nigeria.</p>
+            </div>
           </div>
 
           <div>
