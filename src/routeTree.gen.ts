@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CametRouteImport } from './routes/camet'
 import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const ProgramsRoute = ProgramsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CametRoute = CametRouteImport.update({
+  id: '/camet',
+  path: '/camet',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApplicationReceivedRoute = ApplicationReceivedRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/application-received': typeof ApplicationReceivedRoute
+  '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/application-received': typeof ApplicationReceivedRoute
+  '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/application-received': typeof ApplicationReceivedRoute
+  '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/application-received'
+    | '/camet'
     | '/contact'
     | '/programs'
     | '/sitemap.xml'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/application-received'
+    | '/camet'
     | '/contact'
     | '/programs'
     | '/sitemap.xml'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/application-received'
+    | '/camet'
     | '/contact'
     | '/programs'
     | '/sitemap.xml'
@@ -103,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ApplicationReceivedRoute: typeof ApplicationReceivedRoute
+  CametRoute: typeof CametRoute
   ContactRoute: typeof ContactRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/camet': {
+      id: '/camet'
+      path: '/camet'
+      fullPath: '/camet'
+      preLoaderRoute: typeof CametRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/application-received': {
@@ -159,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ApplicationReceivedRoute: ApplicationReceivedRoute,
+  CametRoute: CametRoute,
   ContactRoute: ContactRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
