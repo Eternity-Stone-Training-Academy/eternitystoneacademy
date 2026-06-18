@@ -62,7 +62,7 @@ function AboutPage() {
               Premium technical training shaped by industry reality.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-              Eternity Stone Training Academy is the professional technical capacity development branch of Eternity Stone Limited, dedicated to helping learners in Osogbo and beyond gain practical, industry-relevant competence.
+              Eternity Stone Training Academy Limited (ESTA) is the Training & Capacity Development Arm of Eternity Stone Group — a CAC-registered Nigerian academy dedicated to helping learners in Osogbo and beyond gain practical, industry-relevant competence across vocational trades, agriculture and sustainability.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="xl">
