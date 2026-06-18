@@ -49,10 +49,10 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "500+", label: "Professionals Trained" },
-  { value: "95%", label: "Completion Rate" },
-  { value: "Expert", label: "Industry Facilitators" },
-  { value: "ITF", label: "Aligned Programs" },
+  { value: "20", label: "Industry-Aligned Courses" },
+  { value: "3", label: "Specialised Schools" },
+  { value: "Industry-Led", label: "Practical Training" },
+  { value: "Competence-Based", label: "Learning Model" },
 ] as const;
 
 const whyPoints = [
@@ -103,34 +103,11 @@ const programPreviews = [
 ] as const;
 
 
-const testimonials = [
-  {
-    quote: "The training helped me secure a supervisory role within six months.",
-    name: "Former Participant",
-    role: "Welding & Fabrication Track",
-  },
-  {
-    quote: "ESTA's hands-on workshops gave me the confidence to start my own solar installation business.",
-    name: "Former Participant",
-    role: "Solar Design & Installation",
-  },
-  {
-    quote: "The facilitators are real industry professionals — every session felt like a day on the job.",
-    name: "Former Participant",
-    role: "Electrical & Instrumentation",
-  },
-  {
-    quote: "I doubled my farm yield after applying what I learned at the farmers training programme.",
-    name: "Former Participant",
-    role: "Farmers Training Programme",
-  },
-] as const;
-
 const partners = [
-  "ITF",
-  "Osun State Govt",
-  "OAU",
-  "Federal Polytechnic",
+  "Industrial Training Fund (ITF)",
+  "Osun State Government",
+  "Obafemi Awolowo University (OAU)",
+  "Federal Polytechnic, Ede",
   "NACCIMA",
   "Eternity Stone Group",
 ] as const;
@@ -171,10 +148,10 @@ function HomePage() {
                   Professional technical capacity development
                 </span>
                 <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-5xl lg:text-6xl">
-                  Skills for Today. Competence for Tomorrow.
+                  World-Class Practical Training for Skills, Enterprise, Agriculture & Sustainability.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/92 sm:text-lg">
-                  Gain industry-ready skills in Occupational Safety, Quality Management, and Technical Operations through hands-on training aligned with international standards.
+                  Eternity Stone Training Academy (ESTA) delivers hands-on, competence-based learning across vocational trades, agriculture & agro-allied, ESG, entrepreneurship — and the upcoming CAMET flagship center.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button asChild variant="hero" size="xl">
@@ -284,7 +261,7 @@ function HomePage() {
           <div>
             <span className="eyebrow">Why ESTA</span>
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-              Why Learn With Eternity Stone Academy?
+              Why Learn With Eternity Stone Training Academy (ESTA)?
             </h2>
             <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
               Every program is designed to translate directly into workplace competence, enterprise growth, and certifiable skill.
@@ -332,35 +309,14 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-band-muted">
-        <div className="site-container">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Testimonials</span>
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl">What our graduates say</h2>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {testimonials.map((t, i) => (
-              <figure key={i} className="industrial-card flex h-full flex-col p-6">
-                <Quote className="size-8 text-primary" />
-                <blockquote className="mt-4 flex-1 text-sm leading-7 text-foreground">
-                  "{t.quote}"
-                </blockquote>
-                <figcaption className="mt-5 border-t border-border pt-4">
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Partners */}
       <section className="py-14">
         <div className="site-container">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Partners & Corporate Clients
+            Prospective & Target Institutional Partners
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-6 text-muted-foreground/80">
+            Institutions ESTA is engaging or actively pursuing partnerships with. Logos and formal collaborations will be confirmed as agreements are signed.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {partners.map((p) => (
