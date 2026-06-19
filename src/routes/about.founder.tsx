@@ -101,7 +101,7 @@ function FounderPage() {
                 <div className="aspect-[3/4] w-full overflow-hidden bg-muted">
                   <img
                     src="/images/founder.jpg"
-                    alt="Engr. Bolaji Abiodun Jegede wearing a white vertical-striped shirt and a light brown blazer jacket"
+                    alt="Engr. Bolaji Abiodun Jegede wearing a grey suit and a blue-striped tie"
                     className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                   />
                 </div>
