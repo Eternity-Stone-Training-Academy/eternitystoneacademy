@@ -217,22 +217,87 @@ function SiteHeader() {
             >
               Home
             </Link>
-            <Link
-              to="/about"
-              activeProps={{ className: "text-primary" }}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              About Us
-            </Link>
+
+            {/* About Us Dropdown with Nested Submenu */}
             <div className="group relative">
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary"
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer"
+              >
+                About Us <ChevronDown className="size-4" />
+              </button>
+              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border/80">
+                  <Link
+                    to="/about"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    activeOptions={{ exact: true }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    About ESTA (Overview)
+                  </Link>
+                  <Link
+                    to="/about/founder"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Meet Our Founder
+                  </Link>
+                  
+                  {/* Nested Directors Dropdown */}
+                  <div className="group/sub relative">
+                    <div className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent cursor-pointer">
+                      <span>Director of Schools</span>
+                      <ChevronDown className="size-4 -rotate-90 group-hover/sub:rotate-0 transition-transform" />
+                    </div>
+                    <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-all duration-150 group-hover/sub:visible group-hover/sub:opacity-100">
+                      <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border">
+                        <Link
+                          to="/about/director-sves"
+                          activeProps={{ className: "text-primary bg-secondary/60 font-bold" }}
+                          className="rounded-lg px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                        >
+                          Vocational & Entrepreneurship (SVES)
+                        </Link>
+                        <Link
+                          to="/about/director-saas"
+                          activeProps={{ className: "text-primary bg-secondary/60 font-bold" }}
+                          className="rounded-lg px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                        >
+                          Agriculture & Agro-Allied (SAAS)
+                        </Link>
+                        <Link
+                          to="/about/director-sses"
+                          activeProps={{ className: "text-primary bg-secondary/60 font-bold" }}
+                          className="rounded-lg px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                        >
+                          Sustainability & ESG (SSES)
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    to="/about/instructors"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Our Instructors
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Schools Dropdown */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer"
               >
                 Schools <ChevronDown className="size-4" />
               </button>
               <div className="invisible absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl">
+                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border/80">
                   {schoolLinks.map((s) => (
                     <Link
                       key={s.hash}
@@ -258,6 +323,7 @@ function SiteHeader() {
                 </div>
               </div>
             </div>
+
             <Link
               to="/contact"
               activeProps={{ className: "text-primary" }}
@@ -278,7 +344,7 @@ function SiteHeader() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-foreground md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-foreground md:hidden cursor-pointer"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
@@ -289,17 +355,80 @@ function SiteHeader() {
         {menuOpen ? (
           <div className="pb-5 md:hidden">
             <div className="industrial-card flex flex-col gap-3 p-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-                  activeProps={{ className: "bg-secondary text-secondary-foreground" }}
-                  activeOptions={{ exact: item.to === "/" }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                activeProps={{ className: "bg-secondary text-secondary-foreground" }}
+                activeOptions={{ exact: true }}
+              >
+                Home
+              </Link>
+              
+              <Link
+                to="/programs"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                activeProps={{ className: "bg-secondary text-secondary-foreground" }}
+              >
+                Programs
+              </Link>
+
+              {/* Mobile About Us Sub-sections */}
+              <div className="border-t border-border pt-2">
+                <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">About Us</p>
+                <div className="flex flex-col gap-1 pl-2">
+                  <Link
+                    to="/about"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                    activeProps={{ className: "bg-secondary/40 text-primary" }}
+                    activeOptions={{ exact: true }}
+                  >
+                    About ESTA (Overview)
+                  </Link>
+                  <Link
+                    to="/about/founder"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                    activeProps={{ className: "bg-secondary/40 text-primary" }}
+                  >
+                    Meet Our Founder
+                  </Link>
+                  
+                  {/* Indented Directors List */}
+                  <div className="pl-3 py-1 space-y-1 border-l border-border/80 ml-3">
+                    <p className="px-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-muted-foreground">Directors</p>
+                    <Link
+                      to="/about/director-sves"
+                      className="block rounded-lg px-3 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                      activeProps={{ className: "bg-secondary/40 text-primary font-bold" }}
+                    >
+                      Vocational & Entrepreneurship (SVES)
+                    </Link>
+                    <Link
+                      to="/about/director-saas"
+                      className="block rounded-lg px-3 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                      activeProps={{ className: "bg-secondary/40 text-primary font-bold" }}
+                    >
+                      Agriculture & Agro-Allied (SAAS)
+                    </Link>
+                    <Link
+                      to="/about/director-sses"
+                      className="block rounded-lg px-3 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+                      activeProps={{ className: "bg-secondary/40 text-primary font-bold" }}
+                    >
+                      Sustainability & ESG (SSES)
+                    </Link>
+                  </div>
+                  
+                  <Link
+                    to="/about/instructors"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                    activeProps={{ className: "bg-secondary/40 text-primary" }}
+                  >
+                    Our Instructors
+                  </Link>
+                </div>
+              </div>
+
+              {/* Mobile Schools Link */}
               <div className="border-t border-border pt-2">
                 <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">Schools</p>
                 {schoolLinks.map((s) => (
@@ -319,7 +448,16 @@ function SiteHeader() {
                   CAMET — Flagship Center (Jan 2027)
                 </Link>
               </div>
-              <Button asChild variant="hero" size="xl" className="w-full">
+
+              <Link
+                to="/contact"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                activeProps={{ className: "bg-secondary text-secondary-foreground" }}
+              >
+                Contact
+              </Link>
+              
+              <Button asChild variant="hero" size="xl" className="w-full mt-2">
                 <Link to="/contact">Apply for Training</Link>
               </Button>
             </div>
@@ -359,12 +497,16 @@ function SiteFooter() {
             <h2 className="font-heading text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
               Quick links
             </h2>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-white/78">
-              {navItems.map((item) => (
-                <Link key={item.to} to={item.to} className="transition-colors hover:text-primary">
-                  {item.label}
-                </Link>
-              ))}
+            <div className="mt-4 flex flex-col gap-2 text-sm text-white/78">
+              <Link to="/" className="transition-colors hover:text-primary">Home</Link>
+              <Link to="/programs" className="transition-colors hover:text-primary">Programs</Link>
+              <Link to="/about" className="transition-colors hover:text-primary font-medium">About Us (Overview)</Link>
+              <Link to="/about/founder" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— Meet Our Founder</Link>
+              <Link to="/about/director-sves" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SVES Director</Link>
+              <Link to="/about/director-saas" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SAAS Director</Link>
+              <Link to="/about/director-sses" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SSES Director</Link>
+              <Link to="/about/instructors" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— Our Instructors</Link>
+              <Link to="/contact" className="transition-colors hover:text-primary">Contact</Link>
             </div>
           </div>
 
