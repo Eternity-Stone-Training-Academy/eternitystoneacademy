@@ -104,7 +104,7 @@ export const schools: School[] = [
       {
         title: "Fitting & Machining",
         duration: "3 Months",
-        image: img("photo-1565939446707-77f74cb24c19"),
+        image: img("photo-1616401784845-180882ba9ba8"),
         highlights: ["Precision measurement","Lathe operations","Milling machine setups","Component tolerances","Industrial workshop safety"],
         outcomes: ["Machine custom industrial spare parts","Read engineering blueprints","Execute component refitting"],
         audience: ["Technical graduates","Maintenance mechanics","Manufacturing technicians"],

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { User, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 export const Route = createFileRoute("/about/director-sves")({
   head: () => ({
@@ -35,12 +35,14 @@ function DirectorSvesPage() {
             
             {/* Left Side: Photo and Bio Card */}
             <div className="space-y-6">
-              {/* 1. Profile Picture: Placeholder image component for Mrs. Adekunbi Jegede */}
+              {/* 1. Profile Picture: Mrs. Adekunbi Jegede */}
               <div className="industrial-card overflow-hidden bg-card shadow-soft max-w-sm mx-auto lg:mx-0">
-                <div className="aspect-[3/4] w-full flex items-center justify-center bg-gradient-to-br from-secondary to-accent p-8">
-                  <div className="flex h-36 w-36 items-center justify-center rounded-full bg-card shadow-md text-primary">
-                    <User className="size-20 stroke-[1.25]" />
-                  </div>
+                <div className="aspect-[3/4] w-full overflow-hidden bg-muted">
+                  <img
+                    src="/images/director-sves.jpg"
+                    alt="Mrs. Adekunbi Jegede - Director of SVES"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
                 <div className="p-5 text-center lg:text-left bg-card">
                   <h3 className="text-lg font-extrabold text-foreground">Mrs. Adekunbi Jegede (B.Sc., MSc.)</h3>

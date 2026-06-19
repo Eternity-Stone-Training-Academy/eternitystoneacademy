@@ -542,8 +542,13 @@ function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/70">
-          © {new Date().getFullYear()} Eternity Stone Training Academy. All rights reserved.
+        <div className="mt-10 border-t border-white/10 pt-6 flex flex-col items-center justify-between gap-4 text-center text-sm text-white/70 md:flex-row">
+          <p>© {new Date().getFullYear()} Eternity Stone Training Academy. All rights reserved.</p>
+          <div className="flex gap-4 text-xs">
+            <Link to="/privacy" className="transition-colors hover:text-primary">Privacy Policy</Link>
+            <span className="text-white/20">|</span>
+            <Link to="/terms" className="transition-colors hover:text-primary">Terms & Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>
