@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about/director-sves")({
       {
         name: "description",
         content:
-          "Read the message and professional profile of Mrs. Adekunbi Jegede, Director of the School of Vocational & Entrepreneurship Studies (SVES).",
+          "Read the message and professional profile of Mr. Oluwaseun Bodunde, Director of the School of Vocational & Entrepreneurship Studies (SVES).",
       },
     ],
   }),
@@ -32,20 +32,20 @@ function DirectorSvesPage() {
       <section className="section-band pt-0">
         <div className="site-container">
           <div className="grid gap-12 lg:grid-cols-[1fr_2.2fr] lg:items-start">
-            
+
             {/* Left Side: Photo and Bio Card */}
             <div className="space-y-6">
-              {/* 1. Profile Picture: Mrs. Adekunbi Jegede */}
+              {/* Profile Picture */}
               <div className="industrial-card overflow-hidden bg-card shadow-soft max-w-sm mx-auto lg:mx-0">
                 <div className="aspect-[3/4] w-full overflow-hidden bg-muted">
                   <img
-                    src="/images/director-sves.jpg"
-                    alt="Mrs. Adekunbi Jegede - Director of SVES"
+                    src="/images/director-saas.jpg"
+                    alt="Mr. Oluwaseun Bodunde - Director of SVES"
                     className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <div className="p-5 text-center lg:text-left bg-card">
-                  <h3 className="text-lg font-extrabold text-foreground">Mrs. Adekunbi Jegede (B.Sc., MSc.)</h3>
+                  <h3 className="text-lg font-extrabold text-foreground">Mr. Oluwaseun Bodunde (B.Sc., MBA)</h3>
                   <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-primary mt-1">
                     Director, SVES
                   </p>
@@ -55,23 +55,23 @@ function DirectorSvesPage() {
 
             {/* Right Side: Bio and Welcome Message */}
             <div className="space-y-10">
-              
-              {/* 2. Professional Bio (Beside/under the photo) */}
+
+              {/* Professional Bio */}
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold text-foreground border-b border-border pb-3">
                   Professional Biography
                 </h2>
                 <div className="space-y-4 text-base leading-8 text-muted-foreground">
                   <p>
-                    Mrs. Adekunbi Jegede is an accomplished educational administrator and vocational training strategist with over 15 years of experience in curriculum development, skills acquisition design, and enterprise management. She holds a Bachelor of Science and a Master of Science in Educational Management, specializing in technical and vocational education systems. 
+                    Mr. Oluwaseun Bodunde is a seasoned agribusiness strategist and vocational education professional with over 12 years of experience in enterprise development, skills training, and sustainable value chain management. He holds a Bachelor of Science in Agricultural Economics and a Master of Business Administration (MBA).
                   </p>
                   <p>
-                    Throughout her career, she has spearheaded numerous youth empowerment initiatives and corporate training partnerships across Nigeria. As the Director of the School of Vocational & Entrepreneurship Studies (SVES) at the Eternity Stone Training Academy (ESTA), she oversees program design, instructional quality, and partnership integration, driving the academy's mission to foster entrepreneurship, industrial capacity, and economic self-reliance.
+                    His work focus has been centered on empowering youth, promoting entrepreneurship, and scaling vocational enterprises. As the Director of the School of Vocational & Entrepreneurship Studies (SVES) at the Eternity Stone Training Academy (ESTA), he designs vocational courses that integrate modern technology and business principles, enabling learners to build highly productive and profitable enterprises across Nigeria and Africa.
                   </p>
                 </div>
               </div>
 
-              {/* 3. Welcome Message (Comes After Bio) */}
+              {/* Welcome Message */}
               <div className="space-y-4 pt-4">
                 <h2 className="text-2xl font-bold text-foreground border-b border-border pb-3">
                   Welcome Message
@@ -80,7 +80,7 @@ function DirectorSvesPage() {
                   <div className="absolute top-4 right-4 text-primary/5">
                     <Quote className="size-16 rotate-180" />
                   </div>
-                  
+
                   <div className="relative z-10 space-y-4 text-base leading-8 text-foreground/90 font-medium">
                     <p>
                       "Welcome to the School of Vocational & Entrepreneurship Studies, the largest and most diverse school within the Eternity Stone Training Academy (ESTA). We live in a rapidly changing world where technical skills, innovation, and entrepreneurship have become essential drivers of personal success and national development. Unfortunately, many talented individuals possess academic qualifications but lack the practical skills required by industry and the confidence needed to create their own opportunities. Our school was established to address this challenge.
@@ -92,12 +92,12 @@ function DirectorSvesPage() {
                       We are particularly passionate about developing a new generation of technical professionals and entrepreneurs who can build industries, solve practical problems, and create jobs. Whether you are a school leaver, graduate, artisan, entrepreneur, career changer, corporate employee, or institution seeking workforce development solutions, there is a place for you within our school.
                     </p>
                     <p>
-                      I invite industry leaders, equipment manufacturers, corporate organizations, development agencies, and government institutions to partner with us in building a skilled workforce capable of driving Nigeria’s industrial transformation. We also welcome scholarship sponsors and donors who share our commitment to youth empowerment and economic inclusion. Together, we can develop the skilled professionals and entrepreneurs who will shape the future of Nigeria and Africa. We look forward to welcoming you."
+                      I invite industry leaders, equipment manufacturers, corporate organizations, development agencies, and government institutions to partner with us in building a skilled workforce capable of driving Nigeria's industrial transformation. We also welcome scholarship sponsors and donors who share our commitment to youth empowerment and economic inclusion. Together, we can develop the skilled professionals and entrepreneurs who will shape the future of Nigeria and Africa. We look forward to welcoming you."
                     </p>
                   </div>
-                  
+
                   <div className="mt-6 pl-2">
-                    <p className="font-heading font-bold text-foreground">Mrs. Adekunbi Jegede (B.Sc., MSc.)</p>
+                    <p className="font-heading font-bold text-foreground">Mr. Oluwaseun Bodunde (B.Sc., MBA)</p>
                     <p className="text-xs font-semibold text-primary">Director, School of Vocational & Entrepreneurship Studies (SVES)</p>
                   </div>
                 </div>
