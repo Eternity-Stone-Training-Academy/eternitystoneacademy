@@ -21,6 +21,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GalleryIndexRouteImport } from './routes/gallery.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as GalleryTrainingRouteImport } from './routes/gallery.training'
 import { Route as GalleryEquipmentRouteImport } from './routes/gallery.equipment'
 import { Route as AboutInstructorsRouteImport } from './routes/about.instructors'
 import { Route as AboutFounderRouteImport } from './routes/about.founder'
@@ -88,6 +89,11 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AboutRoute,
 } as any)
+const GalleryTrainingRoute = GalleryTrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => GalleryRoute,
+} as any)
 const GalleryEquipmentRoute = GalleryEquipmentRouteImport.update({
   id: '/equipment',
   path: '/equipment',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/gallery/equipment': typeof GalleryEquipmentRoute
+  '/gallery/training': typeof GalleryTrainingRoute
   '/about/': typeof AboutIndexRoute
   '/gallery/': typeof GalleryIndexRoute
 }
@@ -154,6 +161,7 @@ export interface FileRoutesByTo {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/gallery/equipment': typeof GalleryEquipmentRoute
+  '/gallery/training': typeof GalleryTrainingRoute
   '/about': typeof AboutIndexRoute
   '/gallery': typeof GalleryIndexRoute
 }
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/gallery/equipment': typeof GalleryEquipmentRoute
+  '/gallery/training': typeof GalleryTrainingRoute
   '/about/': typeof AboutIndexRoute
   '/gallery/': typeof GalleryIndexRoute
 }
@@ -197,6 +206,7 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/gallery/equipment'
+    | '/gallery/training'
     | '/about/'
     | '/gallery/'
   fileRoutesByTo: FileRoutesByTo
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/gallery/equipment'
+    | '/gallery/training'
     | '/about'
     | '/gallery'
   id:
@@ -235,6 +246,7 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/gallery/equipment'
+    | '/gallery/training'
     | '/about/'
     | '/gallery/'
   fileRoutesById: FileRoutesById
@@ -338,6 +350,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof AboutRoute
     }
+    '/gallery/training': {
+      id: '/gallery/training'
+      path: '/training'
+      fullPath: '/gallery/training'
+      preLoaderRoute: typeof GalleryTrainingRouteImport
+      parentRoute: typeof GalleryRoute
+    }
     '/gallery/equipment': {
       id: '/gallery/equipment'
       path: '/equipment'
@@ -405,11 +424,13 @@ const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
 interface GalleryRouteChildren {
   GalleryEquipmentRoute: typeof GalleryEquipmentRoute
+  GalleryTrainingRoute: typeof GalleryTrainingRoute
   GalleryIndexRoute: typeof GalleryIndexRoute
 }
 
 const GalleryRouteChildren: GalleryRouteChildren = {
   GalleryEquipmentRoute: GalleryEquipmentRoute,
+  GalleryTrainingRoute: GalleryTrainingRoute,
   GalleryIndexRoute: GalleryIndexRoute,
 }
 
