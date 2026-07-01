@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CametRouteImport } from './routes/camet'
 import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
@@ -43,6 +44,11 @@ const ProgramsRoute = ProgramsRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -107,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/gallery'
     | '/privacy'
     | '/programs'
     | '/sitemap.xml'
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/gallery'
     | '/privacy'
     | '/programs'
     | '/sitemap.xml'
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/gallery'
     | '/privacy'
     | '/programs'
     | '/sitemap.xml'
@@ -211,6 +223,7 @@ export interface RootRouteChildren {
   ApplicationReceivedRoute: typeof ApplicationReceivedRoute
   CametRoute: typeof CametRoute
   ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   PrivacyRoute: typeof PrivacyRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -353,6 +373,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApplicationReceivedRoute: ApplicationReceivedRoute,
   CametRoute: CametRoute,
   ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   PrivacyRoute: PrivacyRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -361,13 +382,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
