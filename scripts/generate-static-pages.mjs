@@ -7,7 +7,15 @@ const clientDir = path.resolve("dist/client");
 const serverEntry = path.resolve("dist/server/server.js");
 const siteOrigin = process.env.SITE_URL || "https://eternitystoneacademy.pages.dev";
 
-const pageRoutes = ["/", "/programs", "/about", "/contact"];
+const pageRoutes = [
+  "/",
+  "/programs",
+  "/about",
+  "/gallery",
+  "/gallery/equipment",
+  "/gallery/training",
+  "/contact",
+];
 
 async function getClientEntry() {
   const manifestDir = path.resolve("dist/server/assets");
