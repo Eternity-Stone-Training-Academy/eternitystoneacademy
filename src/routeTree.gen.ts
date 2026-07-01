@@ -19,6 +19,7 @@ import { Route as CametRouteImport } from './routes/camet'
 import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GalleryIndexRouteImport } from './routes/gallery.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutInstructorsRouteImport } from './routes/about.instructors'
 import { Route as AboutFounderRouteImport } from './routes/about.founder'
@@ -76,6 +77,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryIndexRoute = GalleryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GalleryRoute,
+} as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -113,7 +119,7 @@ export interface FileRoutesByFullPath {
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
+  '/gallery': typeof GalleryRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -124,13 +130,13 @@ export interface FileRoutesByFullPath {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/about/': typeof AboutIndexRoute
+  '/gallery/': typeof GalleryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -141,6 +147,7 @@ export interface FileRoutesByTo {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/about': typeof AboutIndexRoute
+  '/gallery': typeof GalleryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -149,7 +156,7 @@ export interface FileRoutesById {
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
+  '/gallery': typeof GalleryRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -160,6 +167,7 @@ export interface FileRoutesById {
   '/about/founder': typeof AboutFounderRoute
   '/about/instructors': typeof AboutInstructorsRoute
   '/about/': typeof AboutIndexRoute
+  '/gallery/': typeof GalleryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,13 +188,13 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/about/'
+    | '/gallery/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/application-received'
     | '/camet'
     | '/contact'
-    | '/gallery'
     | '/privacy'
     | '/programs'
     | '/sitemap.xml'
@@ -197,6 +205,7 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/about'
+    | '/gallery'
   id:
     | '__root__'
     | '/'
@@ -215,6 +224,7 @@ export interface FileRouteTypes {
     | '/about/founder'
     | '/about/instructors'
     | '/about/'
+    | '/gallery/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -223,7 +233,7 @@ export interface RootRouteChildren {
   ApplicationReceivedRoute: typeof ApplicationReceivedRoute
   CametRoute: typeof CametRoute
   ContactRoute: typeof ContactRoute
-  GalleryRoute: typeof GalleryRoute
+  GalleryRoute: typeof GalleryRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -302,6 +312,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery/': {
+      id: '/gallery/'
+      path: '/'
+      fullPath: '/gallery/'
+      preLoaderRoute: typeof GalleryIndexRouteImport
+      parentRoute: typeof GalleryRoute
+    }
     '/about/': {
       id: '/about/'
       path: '/'
@@ -367,13 +384,24 @@ const AboutRouteChildren: AboutRouteChildren = {
 
 const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
+interface GalleryRouteChildren {
+  GalleryIndexRoute: typeof GalleryIndexRoute
+}
+
+const GalleryRouteChildren: GalleryRouteChildren = {
+  GalleryIndexRoute: GalleryIndexRoute,
+}
+
+const GalleryRouteWithChildren =
+  GalleryRoute._addFileChildren(GalleryRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRouteWithChildren,
   ApplicationReceivedRoute: ApplicationReceivedRoute,
   CametRoute: CametRoute,
   ContactRoute: ContactRoute,
-  GalleryRoute: GalleryRoute,
+  GalleryRoute: GalleryRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
