@@ -63,10 +63,25 @@ function DirectorSvesPage() {
                 </h2>
                 <div className="space-y-4 text-base leading-8 text-muted-foreground">
                   <p>
-                    Mr. Oluwaseun Bodunde is a seasoned agribusiness strategist and vocational education professional with over 12 years of experience in enterprise development, skills training, and sustainable value chain management. He holds a Bachelor of Science in Agricultural Economics and a Master of Business Administration (MBA).
+                    Oluwaseun Bodunde is a strategy consultant, entrepreneur, and technology leader with over a decade of experience driving business growth, digital transformation, innovation, and operational excellence across the financial services, technology, infrastructure, and startup sectors.
                   </p>
                   <p>
-                    His work focus has been centered on empowering youth, promoting entrepreneurship, and scaling vocational enterprises. As the Director of the School of Vocational & Entrepreneurship Studies (SVES) at the Eternity Stone Training Academy (ESTA), he designs vocational courses that integrate modern technology and business principles, enabling learners to build highly productive and profitable enterprises across Nigeria and Africa.
+                    Throughout his career, Seun has held consulting and leadership roles with globally recognized organizations, including McKinsey & Company, Mastercard Advisors, and Enipro Partners, where he advised multinational corporations, financial institutions, startups, and public sector institutions on growth strategy, product development, operational improvement, investment readiness, and market expansion initiatives.
+                  </p>
+                  <p>
+                    His professional achievements include delivering multimillion-dollar cost optimization programs, leading digital platforms generating over $65 million in annual revenue, supporting infrastructure financing transactions exceeding $500 million, and driving innovation and expansion projects across Africa, Europe, and the Middle East. His expertise spans strategy, entrepreneurship, technology, business development, digital innovation, and organizational transformation.
+                  </p>
+                  <p>
+                    Seun holds a dual Master of Business Administration (MBA) and Master of Science in Information Systems (MSIS) from the prestigious Robert H. Smith School of Business, University of Maryland, USA, with concentrations in Strategy, Corporate Finance, and Artificial Intelligence. He is a recipient of the Merit Scholarship Award and a distinguished Smith Fellow.
+                  </p>
+                  <p>
+                    He also holds a Bachelor of Science in Chemical Engineering (Second Class Upper Division) from the University of Lagos, where he served as Vice President of the University of Lagos Engineering Society, demonstrating an early commitment to leadership, excellence, and service.
+                  </p>
+                  <p>
+                    As Director of the School of Vocational Studies & Entrepreneurship at Eternity Stone Training Academy, Seun is passionate about developing the next generation of skilled professionals, entrepreneurs, and industry leaders. He is committed to bridging the gap between technical competence and entrepreneurial success by equipping learners with practical skills, business acumen, innovative thinking, and the confidence to create sustainable enterprises that contribute meaningfully to economic growth and societal development.
+                  </p>
+                  <p>
+                    Under his leadership, the School seeks to produce graduates who are not only technically proficient but also capable of creating jobs, building businesses, and driving innovation in Nigeria, Africa, and beyond.
                   </p>
                 </div>
               </div>
