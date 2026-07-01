@@ -9,14 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CametRouteImport } from './routes/camet'
 import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutInstructorsRouteImport } from './routes/about.instructors'
+import { Route as AboutFounderRouteImport } from './routes/about.founder'
+import { Route as AboutDirectorSvesRouteImport } from './routes/about.director-sves'
+import { Route as AboutDirectorSsesRouteImport } from './routes/about.director-sses'
+import { Route as AboutDirectorSaasRouteImport } from './routes/about.director-saas'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -25,6 +38,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -52,34 +70,87 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutInstructorsRoute = AboutInstructorsRouteImport.update({
+  id: '/instructors',
+  path: '/instructors',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutFounderRoute = AboutFounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutDirectorSvesRoute = AboutDirectorSvesRouteImport.update({
+  id: '/director-sves',
+  path: '/director-sves',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutDirectorSsesRoute = AboutDirectorSsesRouteImport.update({
+  id: '/director-sses',
+  path: '/director-sses',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutDirectorSaasRoute = AboutDirectorSaasRouteImport.update({
+  id: '/director-saas',
+  path: '/director-saas',
+  getParentRoute: () => AboutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/about/director-saas': typeof AboutDirectorSaasRoute
+  '/about/director-sses': typeof AboutDirectorSsesRoute
+  '/about/director-sves': typeof AboutDirectorSvesRoute
+  '/about/founder': typeof AboutFounderRoute
+  '/about/instructors': typeof AboutInstructorsRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/about/director-saas': typeof AboutDirectorSaasRoute
+  '/about/director-sses': typeof AboutDirectorSsesRoute
+  '/about/director-sves': typeof AboutDirectorSvesRoute
+  '/about/founder': typeof AboutFounderRoute
+  '/about/instructors': typeof AboutInstructorsRoute
+  '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/application-received': typeof ApplicationReceivedRoute
   '/camet': typeof CametRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/about/director-saas': typeof AboutDirectorSaasRoute
+  '/about/director-sses': typeof AboutDirectorSsesRoute
+  '/about/director-sves': typeof AboutDirectorSvesRoute
+  '/about/founder': typeof AboutFounderRoute
+  '/about/instructors': typeof AboutInstructorsRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,17 +160,32 @@ export interface FileRouteTypes {
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/privacy'
     | '/programs'
     | '/sitemap.xml'
+    | '/terms'
+    | '/about/director-saas'
+    | '/about/director-sses'
+    | '/about/director-sves'
+    | '/about/founder'
+    | '/about/instructors'
+    | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/privacy'
     | '/programs'
     | '/sitemap.xml'
+    | '/terms'
+    | '/about/director-saas'
+    | '/about/director-sses'
+    | '/about/director-sves'
+    | '/about/founder'
+    | '/about/instructors'
+    | '/about'
   id:
     | '__root__'
     | '/'
@@ -107,22 +193,39 @@ export interface FileRouteTypes {
     | '/application-received'
     | '/camet'
     | '/contact'
+    | '/privacy'
     | '/programs'
     | '/sitemap.xml'
+    | '/terms'
+    | '/about/director-saas'
+    | '/about/director-sses'
+    | '/about/director-sves'
+    | '/about/founder'
+    | '/about/instructors'
+    | '/about/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  AboutRoute: typeof AboutRouteWithChildren
   ApplicationReceivedRoute: typeof ApplicationReceivedRoute
   CametRoute: typeof CametRoute
   ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -135,6 +238,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -172,18 +282,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/instructors': {
+      id: '/about/instructors'
+      path: '/instructors'
+      fullPath: '/about/instructors'
+      preLoaderRoute: typeof AboutInstructorsRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/founder': {
+      id: '/about/founder'
+      path: '/founder'
+      fullPath: '/about/founder'
+      preLoaderRoute: typeof AboutFounderRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/director-sves': {
+      id: '/about/director-sves'
+      path: '/director-sves'
+      fullPath: '/about/director-sves'
+      preLoaderRoute: typeof AboutDirectorSvesRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/director-sses': {
+      id: '/about/director-sses'
+      path: '/director-sses'
+      fullPath: '/about/director-sses'
+      preLoaderRoute: typeof AboutDirectorSsesRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/director-saas': {
+      id: '/about/director-saas'
+      path: '/director-saas'
+      fullPath: '/about/director-saas'
+      preLoaderRoute: typeof AboutDirectorSaasRouteImport
+      parentRoute: typeof AboutRoute
+    }
   }
 }
 
+interface AboutRouteChildren {
+  AboutDirectorSaasRoute: typeof AboutDirectorSaasRoute
+  AboutDirectorSsesRoute: typeof AboutDirectorSsesRoute
+  AboutDirectorSvesRoute: typeof AboutDirectorSvesRoute
+  AboutFounderRoute: typeof AboutFounderRoute
+  AboutInstructorsRoute: typeof AboutInstructorsRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutDirectorSaasRoute: AboutDirectorSaasRoute,
+  AboutDirectorSsesRoute: AboutDirectorSsesRoute,
+  AboutDirectorSvesRoute: AboutDirectorSvesRoute,
+  AboutFounderRoute: AboutFounderRoute,
+  AboutInstructorsRoute: AboutInstructorsRoute,
+  AboutIndexRoute: AboutIndexRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  AboutRoute: AboutRouteWithChildren,
   ApplicationReceivedRoute: ApplicationReceivedRoute,
   CametRoute: CametRoute,
   ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
