@@ -324,6 +324,41 @@ function SiteHeader() {
               </div>
             </div>
 
+            {/* Gallery Dropdown */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer"
+              >
+                Gallery <ChevronDown className="size-4" />
+              </button>
+              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border/80">
+                  <Link
+                    to="/gallery/equipment"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Equipment Gallery
+                  </Link>
+                  <Link
+                    to="/gallery/training"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Training Gallery
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    activeOptions={{ exact: true }}
+                    className="rounded-lg border-t border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:bg-accent"
+                  >
+                    Gallery overview →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <Link
               to="/contact"
               activeProps={{ className: "text-primary" }}
@@ -446,6 +481,25 @@ function SiteHeader() {
                   className="block rounded-lg px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-accent"
                 >
                   CAMET — Flagship Center (Jan 2027)
+                </Link>
+              </div>
+
+              {/* Mobile Gallery */}
+              <div className="border-t border-border pt-2">
+                <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">Gallery</p>
+                <Link
+                  to="/gallery/equipment"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  activeProps={{ className: "bg-secondary/40 text-primary" }}
+                >
+                  Equipment Gallery
+                </Link>
+                <Link
+                  to="/gallery/training"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  activeProps={{ className: "bg-secondary/40 text-primary" }}
+                >
+                  Training Gallery
                 </Link>
               </div>
 
