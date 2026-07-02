@@ -324,6 +324,44 @@ function SiteHeader() {
               </div>
             </div>
 
+            {/* Gallery Dropdown */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer"
+              >
+                Gallery <ChevronDown className="size-4" />
+              </button>
+              <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border/80">
+                  <Link
+                    to="/gallery"
+                    hash="workshop"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Workshop Gallery
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    hash="equipment"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Equipment Gallery
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    hash="camet"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    CAMET Machinery
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <Link
               to="/contact"
               activeProps={{ className: "text-primary" }}
@@ -449,6 +487,34 @@ function SiteHeader() {
                 </Link>
               </div>
 
+              {/* Mobile Gallery Section */}
+              <div className="border-t border-border pt-2">
+                <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">Gallery</p>
+                <div className="flex flex-col gap-1 pl-2">
+                  <Link
+                    to="/gallery"
+                    hash="workshop"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Workshop Gallery
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    hash="equipment"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Equipment Gallery
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    hash="camet"
+                    className="block rounded-lg px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    CAMET Machinery Gallery
+                  </Link>
+                </div>
+              </div>
+
               <Link
                 to="/contact"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
@@ -506,6 +572,7 @@ function SiteFooter() {
               <Link to="/about/director-saas" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SAAS Director</Link>
               <Link to="/about/director-sses" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SSES Director</Link>
               <Link to="/about/instructors" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— Our Instructors</Link>
+              <Link to="/gallery" className="transition-colors hover:text-primary">Gallery</Link>
               <Link to="/contact" className="transition-colors hover:text-primary">Contact</Link>
             </div>
           </div>
