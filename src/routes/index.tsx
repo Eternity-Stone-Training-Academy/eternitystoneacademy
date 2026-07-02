@@ -147,7 +147,7 @@ function HomePage() {
                   <Sparkles className="size-3.5 text-primary" />
                   Professional technical capacity development
                 </span>
-                <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-5xl lg:text-6xl">
+                <h1 className="mt-6 max-w-3xl text-2xl font-extrabold leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl lg:text-4xl xl:text-5xl">
                   World-Class Practical Training for Skills, Enterprise, Agriculture & Sustainability.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/92 sm:text-lg">
@@ -179,7 +179,10 @@ function HomePage() {
                 <img
                   src={heroAsset.url}
                   alt="ESTA trainee operating machining equipment in the workshop"
-                  className="h-full min-h-[260px] w-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="block aspect-[4/3] h-full w-full object-cover object-center"
                 />
               </div>
               <div className="grid gap-4">
@@ -187,14 +190,18 @@ function HomePage() {
                   <img
                     src={courseImages.welding}
                     alt="ESTA welding trainee demonstrating practical fabrication skills"
-                    className="h-44 w-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                    className="block aspect-[16/9] w-full object-cover object-center"
                   />
                 </div>
                 <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
                   <img
                     src={courseImages.solar}
                     alt="ESTA learners working with solar equipment"
-                    className="h-44 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    className="block aspect-[16/9] w-full object-cover object-center"
                   />
                 </div>
               </div>
@@ -241,7 +248,13 @@ function HomePage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {programPreviews.map((p) => (
               <article key={p.title} className="industrial-card overflow-hidden">
-                <img src={p.image} alt={p.title} className="h-44 w-full object-cover" />
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="block aspect-[16/9] w-full object-cover object-center"
+                />
                 <div className="p-6">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
                     <p.icon className="size-5 text-primary" />
