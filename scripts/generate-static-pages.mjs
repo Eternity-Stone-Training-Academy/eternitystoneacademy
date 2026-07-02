@@ -14,6 +14,7 @@ const pageRoutes = [
   "/gallery",
   "/gallery/equipment",
   "/gallery/training",
+  "/gallery/workshop",
   "/contact",
 ];
 

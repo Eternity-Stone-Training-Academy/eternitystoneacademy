@@ -349,6 +349,13 @@ function SiteHeader() {
                     Training Gallery
                   </Link>
                   <Link
+                    to="/gallery/workshop"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Workshop Gallery
+                  </Link>
+                  <Link
                     to="/gallery"
                     activeOptions={{ exact: true }}
                     className="rounded-lg border-t border-border px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:bg-accent"
@@ -500,6 +507,13 @@ function SiteHeader() {
                   activeProps={{ className: "bg-secondary/40 text-primary" }}
                 >
                   Training Gallery
+                </Link>
+                <Link
+                  to="/gallery/workshop"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  activeProps={{ className: "bg-secondary/40 text-primary" }}
+                >
+                  Workshop Gallery
                 </Link>
               </div>
 
