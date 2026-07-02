@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, GraduationCap, Wrench } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Wrench } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -41,7 +41,7 @@ function GalleryIndex() {
       </section>
 
       <section className="section-band">
-        <div className="site-container grid gap-6 md:grid-cols-2">
+        <div className="site-container grid gap-6 md:grid-cols-3">
           <article className="industrial-card p-8">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
               <Wrench className="size-5 text-primary" />
@@ -72,6 +72,24 @@ function GalleryIndex() {
               <Button asChild variant="hero" size="lg">
                 <Link to="/gallery/training">
                   View Training Gallery
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </div>
+          </article>
+
+          <article className="industrial-card p-8">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+              <Building2 className="size-5 text-primary" />
+            </div>
+            <h2 className="mt-5 text-2xl font-extrabold text-foreground">Workshop Gallery</h2>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              A look inside the ESTA fabrication facility and machining workshop floor in Osogbo.
+            </p>
+            <div className="mt-6">
+              <Button asChild variant="hero" size="lg">
+                <Link to="/gallery/workshop">
+                  View Workshop Gallery
                   <ArrowRight />
                 </Link>
               </Button>
