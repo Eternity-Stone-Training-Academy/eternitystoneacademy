@@ -1,7 +1,78 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ImageOff } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 
-import { Button } from "@/components/ui/button";
+import lathe3 from "@/assets/equipment/All_3_Lathe_Machines.png.asset.json";
+import arcWelder from "@/assets/equipment/Arc_Welding_Machine_SMAW.png.asset.json";
+import benchGrinder from "@/assets/equipment/Bench_Grinder_Pedestal_Grinder.png.asset.json";
+import centerLathe from "@/assets/equipment/Center_Lathe_Machine.JPG.asset.json";
+import furnace from "@/assets/equipment/Electric_Heat_Treatment_Furnace.png.asset.json";
+import milling from "@/assets/equipment/Horizontal_Milling_Machine.png.asset.json";
+import hydraulicPress from "@/assets/equipment/Hydraulic_Workshop_Press.png.asset.json";
+import pillarDrill from "@/assets/equipment/Pillar_Drilling_Machine.png.asset.json";
+import powerSaw from "@/assets/equipment/Power_Arc_Saw.JPG.asset.json";
+import sheetFolder from "@/assets/equipment/Sheet_Metal_Folding_Machine.png.asset.json";
+
+const equipment = [
+  {
+    title: "Center Lathe Machine",
+    description:
+      "Heavy-duty precision lathe for turning, facing, threading and boring cylindrical metal workpieces.",
+    image: centerLathe.url,
+  },
+  {
+    title: "Lathe Machines Bay",
+    description:
+      "Multi-station lathe bay equipped with Pinacho S-90/200 machines for parallel hands-on training.",
+    image: lathe3.url,
+  },
+  {
+    title: "Horizontal Milling Machine",
+    description:
+      "Industrial horizontal milling machine for slotting, gear cutting and profiling flat and contoured surfaces.",
+    image: milling.url,
+  },
+  {
+    title: "Pillar Drilling Machine",
+    description:
+      "Column-mounted Rigi DP-25 drill press for accurate vertical drilling on metal stock.",
+    image: pillarDrill.url,
+  },
+  {
+    title: "Power Arc Saw",
+    description:
+      "Heavy-duty power hacksaw for cutting bar stock, pipes and structural sections to length.",
+    image: powerSaw.url,
+  },
+  {
+    title: "Sheet Metal Folding Machine",
+    description:
+      "Manual sheet metal folder for producing accurate bends, flanges and box sections from flat sheet.",
+    image: sheetFolder.url,
+  },
+  {
+    title: "Hydraulic Workshop Press",
+    description:
+      "United Kingdom Goodwill hydraulic press for bending, straightening, pressing bearings and forming operations.",
+    image: hydraulicPress.url,
+  },
+  {
+    title: "Bench / Pedestal Grinder",
+    description:
+      "Pair of GEMCO pedestal grinders for tool sharpening, deburring and surface finishing of metal parts.",
+    image: benchGrinder.url,
+  },
+  {
+    title: "Arc Welding Machine (SMAW)",
+    description:
+      "Edon ARC-400 inverter-based shielded metal arc welder for high-current stick welding on structural steel.",
+    image: arcWelder.url,
+  },
+  {
+    title: "Electric Heat Treatment Furnace",
+    description:
+      "GEMCO electric furnaces for annealing, hardening, tempering and normalizing metal specimens.",
+    image: furnace.url,
+  },
+];
 
 export const Route = createFileRoute("/gallery/equipment")({
   head: () => ({
@@ -42,19 +113,30 @@ function EquipmentGalleryPage() {
 
       <section className="section-band">
         <div className="site-container">
-          <div className="industrial-card flex flex-col items-center gap-4 p-12 text-center">
-            <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
-              <ImageOff className="size-6" />
-            </div>
-            <h2 className="text-2xl font-extrabold text-foreground">Photos coming soon</h2>
-            <p className="max-w-xl text-sm leading-7 text-muted-foreground">
-              Our equipment photo library is being prepared. Check back shortly — high-resolution images of our workshop machinery will appear here.
-            </p>
-            <div className="pt-2">
-              <Button asChild variant="hero" size="lg">
-                <Link to="/gallery">Back to Gallery</Link>
-              </Button>
-            </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {equipment.map((item) => (
+              <article
+                key={item.title}
+                className="industrial-card overflow-hidden flex flex-col"
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden bg-secondary">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h2 className="text-lg font-extrabold text-foreground">
+                    {item.title}
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
