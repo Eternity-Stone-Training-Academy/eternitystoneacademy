@@ -335,6 +335,13 @@ function SiteHeader() {
               <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <div className="industrial-card flex flex-col gap-1 bg-card p-2 shadow-xl border border-border/80">
                   <Link
+                    to="/gallery/workshop"
+                    activeProps={{ className: "text-primary bg-secondary/60" }}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    Workshop Gallery
+                  </Link>
+                  <Link
                     to="/gallery/equipment"
                     activeProps={{ className: "text-primary bg-secondary/60" }}
                     className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
@@ -347,13 +354,6 @@ function SiteHeader() {
                     className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                   >
                     Training Gallery
-                  </Link>
-                  <Link
-                    to="/gallery/workshop"
-                    activeProps={{ className: "text-primary bg-secondary/60" }}
-                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-                  >
-                    Workshop Gallery
                   </Link>
                   <Link
                     to="/gallery"
@@ -495,6 +495,13 @@ function SiteHeader() {
               <div className="border-t border-border pt-2">
                 <p className="px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary">Gallery</p>
                 <Link
+                  to="/gallery/workshop"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  activeProps={{ className: "bg-secondary/40 text-primary" }}
+                >
+                  Workshop Gallery
+                </Link>
+                <Link
                   to="/gallery/equipment"
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                   activeProps={{ className: "bg-secondary/40 text-primary" }}
@@ -507,13 +514,6 @@ function SiteHeader() {
                   activeProps={{ className: "bg-secondary/40 text-primary" }}
                 >
                   Training Gallery
-                </Link>
-                <Link
-                  to="/gallery/workshop"
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-                  activeProps={{ className: "bg-secondary/40 text-primary" }}
-                >
-                  Workshop Gallery
                 </Link>
               </div>
 
