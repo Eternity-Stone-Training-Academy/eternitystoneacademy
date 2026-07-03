@@ -174,34 +174,34 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 xl:h-full">
+              <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6 xl:h-full">
                 <img
                   src={heroAsset.url}
                   alt="ESTA trainee operating machining equipment in the workshop"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="block aspect-[4/3] h-full w-full object-cover object-center"
+                  className="block h-full w-full object-cover object-center max-xl:aspect-[4/3]"
                 />
               </div>
-              <div className="grid gap-4">
-                <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
+              <div className="grid gap-4 xl:grid-rows-2 xl:h-full">
+                <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6 xl:h-full">
                   <img
                     src={courseImages.welding}
                     alt="ESTA welding trainee demonstrating practical fabrication skills"
                     loading="eager"
                     decoding="async"
-                    className="block aspect-[16/9] w-full object-cover object-center"
+                    className="block w-full object-cover object-center max-xl:aspect-[16/9] xl:h-full"
                   />
                 </div>
-                <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6">
+                <div className="overflow-hidden rounded-xl border border-white/12 bg-white/6 xl:h-full">
                   <img
                     src={courseImages.solar}
                     alt="ESTA learners working with solar equipment"
                     loading="lazy"
                     decoding="async"
-                    className="block aspect-[16/9] w-full object-cover object-center"
+                    className="block w-full object-cover object-center max-xl:aspect-[16/9] xl:h-full"
                   />
                 </div>
               </div>
