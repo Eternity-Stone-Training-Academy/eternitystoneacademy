@@ -10,6 +10,9 @@ import hydraulicPress from "@/assets/equipment/Hydraulic_Workshop_Press.png.asse
 import pillarDrill from "@/assets/equipment/Pillar_Drilling_Machine.png.asset.json";
 import powerSaw from "@/assets/equipment/Power_Arc_Saw.JPG.asset.json";
 import sheetFolder from "@/assets/equipment/Sheet_Metal_Folding_Machine.png.asset.json";
+import sheetRoller from "@/assets/equipment/Sheet_Metal_Rolling_Machine.png.asset.json";
+import spotWelder from "@/assets/equipment/Spot_Welding_Machine.png.asset.json";
+import verticalMilling from "@/assets/equipment/Vertical_Milling_Machine.png.asset.json";
 
 const equipment = [
   {
@@ -49,6 +52,12 @@ const equipment = [
     image: sheetFolder.url,
   },
   {
+    title: "Sheet Metal Rolling Machine",
+    description:
+      "Three-roller bending machine for forming cylindrical shells, cones and curved profiles from flat sheet metal.",
+    image: sheetRoller.url,
+  },
+  {
     title: "Hydraulic Workshop Press",
     description:
       "United Kingdom Goodwill hydraulic press for bending, straightening, pressing bearings and forming operations.",
@@ -65,6 +74,18 @@ const equipment = [
     description:
       "Edon ARC-400 inverter-based shielded metal arc welder for high-current stick welding on structural steel.",
     image: arcWelder.url,
+  },
+  {
+    title: "Spot Welding Machine",
+    description:
+      "Pedestal-mounted resistance spot welder for joining overlapping sheet metal parts in fabrication work.",
+    image: spotWelder.url,
+  },
+  {
+    title: "Vertical Milling Machine",
+    description:
+      "HAWK turret-type vertical milling machine for precision face milling, slotting, drilling and profiling operations.",
+    image: verticalMilling.url,
   },
   {
     title: "Electric Heat Treatment Furnace",
