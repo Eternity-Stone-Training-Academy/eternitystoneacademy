@@ -214,12 +214,23 @@ function HomePage() {
       <section className="py-10 sm:py-14 bg-surface">
         <div className="site-container">
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="industrial-card p-6 text-center">
-                <p className="text-3xl font-extrabold text-primary sm:text-4xl">{s.value}</p>
-                <p className="mt-2 text-sm font-medium text-muted-foreground">{s.label}</p>
-              </div>
-            ))}
+            {stats.map((s) => {
+              const isNumeric = /^\d/.test(s.value);
+              return (
+                <div key={s.label} className="industrial-card p-6 text-center">
+                  <p
+                    className={
+                      isNumeric
+                        ? "text-3xl font-extrabold text-primary sm:text-4xl"
+                        : "text-lg font-extrabold text-primary sm:text-xl"
+                    }
+                  >
+                    {s.value}
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-muted-foreground">{s.label}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
