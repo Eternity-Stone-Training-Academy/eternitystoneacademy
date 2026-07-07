@@ -5,6 +5,7 @@ import arcWelder from "@/assets/equipment/Arc_Welding_Machine_SMAW.png.asset.jso
 import benchGrinder from "@/assets/equipment/Bench_Grinder_Pedestal_Grinder.png.asset.json";
 import centerLathe from "@/assets/equipment/Center_Lathe_Machine.JPG.asset.json";
 import furnace from "@/assets/equipment/Electric_Heat_Treatment_Furnace.png.asset.json";
+import horizontalGrinder from "@/assets/equipment/Horizontal_Surface_Grinding_Machine.png.asset.json";
 import milling from "@/assets/equipment/Horizontal_Milling_Machine.png.asset.json";
 import hydraulicPress from "@/assets/equipment/Hydraulic_Workshop_Press.png.asset.json";
 import pillarDrill from "@/assets/equipment/Pillar_Drilling_Machine.png.asset.json";
@@ -12,6 +13,7 @@ import powerSaw from "@/assets/equipment/Power_Arc_Saw.JPG.asset.json";
 import sheetFolder from "@/assets/equipment/Sheet_Metal_Folding_Machine.png.asset.json";
 import sheetRoller from "@/assets/equipment/Sheet_Metal_Rolling_Machine.png.asset.json";
 import spotWelder from "@/assets/equipment/Spot_Welding_Machine.png.asset.json";
+import verticalGrinder from "@/assets/equipment/Vertical_Surface_Grinding_Machine.png.asset.json";
 import verticalMilling from "@/assets/equipment/Vertical_Milling_Machine.png.asset.json";
 
 const equipment = [
@@ -86,6 +88,18 @@ const equipment = [
     description:
       "HAWK turret-type vertical milling machine for precision face milling, slotting, drilling and profiling operations.",
     image: verticalMilling.url,
+  },
+  {
+    title: "Horizontal Surface Grinding Machine",
+    description:
+      "AMTC horizontal-spindle surface grinder for producing precise, smooth flat finishes on hardened metal components.",
+    image: horizontalGrinder.url,
+  },
+  {
+    title: "Vertical Surface Grinding Machine",
+    description:
+      "AMTC vertical-spindle surface grinder for high-accuracy stock removal and flat finishing on larger workpieces.",
+    image: verticalGrinder.url,
   },
   {
     title: "Electric Heat Treatment Furnace",
