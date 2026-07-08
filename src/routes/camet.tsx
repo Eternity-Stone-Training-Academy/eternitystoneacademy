@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarClock, Handshake, Rocket, Sparkles, Tractor } from "lucide-react";
+import { ArrowRight, CalendarClock, Handshake, Rocket, Sparkles, Tag, Tractor } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { camet, cametGallery } from "@/lib/courses";
@@ -83,7 +83,16 @@ function CametPage() {
                 </div>
                 <p className="mt-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-primary">Program {i + 1}</p>
                 <h3 className="mt-1 text-lg font-bold text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.duration}</p>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                    {p.duration}
+                  </span>
+                  {"price" in p && p.price ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-extrabold text-primary-foreground">
+                      <Tag className="size-3" /> {p.price}
+                    </span>
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
