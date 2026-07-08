@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Clock,
   Download,
+  HandCoins,
   MapPin,
   Monitor,
   Rocket,
@@ -63,9 +64,19 @@ function CourseCard({ course }: { course: Course }) {
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <Clock className="size-3.5" /> {course.duration}
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-            <Tag className="size-3.5" /> Contact Admissions for Pricing
-          </span>
+          {course.customPricing ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+              <HandCoins className="size-3.5" /> Customized Pricing / Request Proposal
+            </span>
+          ) : course.price ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-extrabold text-primary-foreground">
+              <Tag className="size-3.5" /> {course.price}
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Tag className="size-3.5" /> Contact Admissions for Pricing
+            </span>
+          )}
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Monitor className="size-3.5" /> Online / Physical / Hybrid Options Available
           </span>
@@ -112,7 +123,7 @@ function CourseCard({ course }: { course: Course }) {
         <div className="mt-auto pt-6">
           <Button asChild variant="hero" size="lg" className="w-full">
             <Link to="/contact">
-              Apply for Training
+              {course.customPricing ? "Request a Proposal" : "Apply for Training"}
               <ArrowRight />
             </Link>
           </Button>
@@ -180,9 +191,16 @@ function CametDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (v: 
                     Program {i + 1}
                   </p>
                   <p className="mt-1 text-sm font-bold text-foreground">{p.title}</p>
-                  <p className="mt-1 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Clock className="size-3.5 text-primary" /> {p.duration}
-                  </p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
+                      <Clock className="size-3 text-primary" /> {p.duration}
+                    </span>
+                    {"price" in p && p.price ? (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-primary px-2 py-0.5 text-[11px] font-extrabold text-primary-foreground">
+                        <Tag className="size-3" /> {p.price}
+                      </span>
+                    ) : null}
+                  </div>
                 </div>
               ))}
             </div>
