@@ -367,6 +367,14 @@ function SiteHeader() {
             </div>
 
             <Link
+              to="/tuition"
+              activeProps={{ className: "text-primary" }}
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Tuition & Fees
+            </Link>
+
+            <Link
               to="/contact"
               activeProps={{ className: "text-primary" }}
               className="text-sm font-medium transition-colors hover:text-primary"
@@ -374,6 +382,7 @@ function SiteHeader() {
               Contact
             </Link>
           </nav>
+
 
           <div className="hidden md:block">
             <Button asChild variant="hero" size="lg">
@@ -518,6 +527,14 @@ function SiteHeader() {
               </div>
 
               <Link
+                to="/tuition"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                activeProps={{ className: "bg-secondary text-secondary-foreground" }}
+              >
+                Tuition & Fees
+              </Link>
+
+              <Link
                 to="/contact"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                 activeProps={{ className: "bg-secondary text-secondary-foreground" }}
@@ -568,6 +585,7 @@ function SiteFooter() {
             <div className="mt-4 flex flex-col gap-2 text-sm text-white/78">
               <Link to="/" className="transition-colors hover:text-primary">Home</Link>
               <Link to="/programs" className="transition-colors hover:text-primary">Programs</Link>
+              <Link to="/tuition" className="transition-colors hover:text-primary">Tuition & Fees</Link>
               <Link to="/about" className="transition-colors hover:text-primary font-medium">About Us (Overview)</Link>
               <Link to="/about/founder" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— Meet Our Founder</Link>
               <Link to="/about/director-sves" className="transition-colors hover:text-primary pl-3 text-xs opacity-85">— SVES Director</Link>

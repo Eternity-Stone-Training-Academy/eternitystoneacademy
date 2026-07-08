@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TuitionRouteImport } from './routes/tuition'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProgramsRouteImport } from './routes/programs'
@@ -30,6 +31,11 @@ import { Route as AboutDirectorSvesRouteImport } from './routes/about.director-s
 import { Route as AboutDirectorSsesRouteImport } from './routes/about.director-sses'
 import { Route as AboutDirectorSaasRouteImport } from './routes/about.director-saas'
 
+const TuitionRoute = TuitionRouteImport.update({
+  id: '/tuition',
+  path: '/tuition',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -142,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/tuition': typeof TuitionRoute
   '/about/director-saas': typeof AboutDirectorSaasRoute
   '/about/director-sses': typeof AboutDirectorSsesRoute
   '/about/director-sves': typeof AboutDirectorSvesRoute
@@ -162,6 +169,7 @@ export interface FileRoutesByTo {
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/tuition': typeof TuitionRoute
   '/about/director-saas': typeof AboutDirectorSaasRoute
   '/about/director-sses': typeof AboutDirectorSsesRoute
   '/about/director-sves': typeof AboutDirectorSvesRoute
@@ -185,6 +193,7 @@ export interface FileRoutesById {
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/tuition': typeof TuitionRoute
   '/about/director-saas': typeof AboutDirectorSaasRoute
   '/about/director-sses': typeof AboutDirectorSsesRoute
   '/about/director-sves': typeof AboutDirectorSvesRoute
@@ -209,6 +218,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/sitemap.xml'
     | '/terms'
+    | '/tuition'
     | '/about/director-saas'
     | '/about/director-sses'
     | '/about/director-sves'
@@ -229,6 +239,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/sitemap.xml'
     | '/terms'
+    | '/tuition'
     | '/about/director-saas'
     | '/about/director-sses'
     | '/about/director-sves'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/sitemap.xml'
     | '/terms'
+    | '/tuition'
     | '/about/director-saas'
     | '/about/director-sses'
     | '/about/director-sves'
@@ -274,10 +286,18 @@ export interface RootRouteChildren {
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  TuitionRoute: typeof TuitionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tuition': {
+      id: '/tuition'
+      path: '/tuition'
+      fullPath: '/tuition'
+      preLoaderRoute: typeof TuitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -469,6 +489,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  TuitionRoute: TuitionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
