@@ -11,6 +11,7 @@ const pageRoutes = [
   "/",
   "/programs",
   "/about",
+  "/tuition",
   "/gallery",
   "/gallery/equipment",
   "/gallery/training",
