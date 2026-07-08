@@ -217,12 +217,11 @@ function HomePage() {
             {stats.map((s) => {
               const isNumeric = /^\d/.test(s.value);
               return (
-                <div key={s.label} className="industrial-card p-6 text-center">
+                <div key={s.label} className="industrial-card flex flex-col items-center justify-center p-6 text-center">
                   <p
                     className={
-                      isNumeric
-                        ? "text-3xl font-extrabold text-primary sm:text-4xl"
-                        : "text-lg font-extrabold text-primary sm:text-xl"
+                      "flex min-h-[2.5rem] sm:min-h-[3rem] items-center justify-center font-extrabold text-primary " +
+                      (isNumeric ? "text-3xl sm:text-4xl" : "text-lg sm:text-xl")
                     }
                   >
                     {s.value}
