@@ -5,8 +5,6 @@ import fabExt1 from "@/assets/workshop/Fabrication_Facility_Exterior_1.jpg.asset
 import fabExt2 from "@/assets/workshop/Fabrication_Facility_Exterior_2.jpg.asset.json";
 import wingA from "@/assets/workshop/Workshop_Floor_Area_Wing_A.png.asset.json";
 import floor from "@/assets/workshop/Workshop_Floor_Area.png.asset.json";
-import machiningBay from "@/assets/workshop/SAVE_20260709_065206.jpg.asset.json";
-import sheetMetalBay from "@/assets/workshop/SAVE_20260709_065218.jpg.asset.json";
 
 type Shot = {
   title: string;
@@ -38,18 +36,6 @@ const shots: Shot[] = [
     description:
       "The main workshop floor featuring a full line-up of engine lathes, milling and shaping machines used across ESTA's practical modules.",
     src: floor.url,
-  },
-  {
-    title: "Machining & Fitting Bay",
-    description:
-      "Fitting benches, pillar drills and pedestal machines laid out across the main machining bay for hands-on fitting and drilling practice.",
-    src: machiningBay.url,
-  },
-  {
-    title: "Sheet Metal & Press Bay",
-    description:
-      "Sheet metal folding and rolling machines alongside the hydraulic workshop press and pedestal drill — the core of ESTA's sheet metal training area.",
-    src: sheetMetalBay.url,
   },
 ];
 
