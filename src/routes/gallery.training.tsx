@@ -8,7 +8,10 @@ import img3 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_30_38_PM_
 import img4 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_30_38_PM_and_more_4.jpg.asset.json";
 import img5 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_30_38_PM_and_more_5.jpg.asset.json";
 import img6 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_30_38_PM_and_more_6.jpg.asset.json";
+import img2 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_30_38_PM_and_more_2.jpg.asset.json";
 import wf1 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_1.jpg.asset.json";
+import wf2 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_2.jpg.asset.json";
+import wf3 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_3.jpg.asset.json";
 import wf4 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_4.jpg.asset.json";
 import wf5 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_5.jpg.asset.json";
 import wf6 from "@/assets/training/Merged_ChatGPT_Image_Jul_7_2026_02_54_16_PM_and_more_6.jpg.asset.json";
@@ -20,7 +23,10 @@ const trainingPhotos: { url: string; caption: string }[] = [
   { url: img4.url, caption: "Trainees completing written coursework during theory sessions" },
   { url: img6.url, caption: "Hand tools and PPE laid out for practical demonstrations" },
   { url: img1.url, caption: "Group photo with the lathe machine after workshop induction" },
+  { url: img2.url, caption: "Facilitator walk-through of the milling machine during workshop tour" },
+  { url: wf2.url, caption: "Full cohort group photo with facilitators and programme leads" },
   { url: wf1.url, caption: "Kitted-up trainees observing a live grinding demonstration" },
+  { url: wf3.url, caption: "Measuring and marking steel stock during fabrication practice" },
   { url: wf5.url, caption: "Cutting and grinding steel stock in full PPE" },
   { url: wf4.url, caption: "Team fabricating a welded steel frame — Group D bench work" },
   { url: wf6.url, caption: "Group welding practice on a fabricated steel table" },
