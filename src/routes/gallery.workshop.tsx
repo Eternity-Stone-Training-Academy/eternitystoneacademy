@@ -5,6 +5,9 @@ import fabExt1 from "@/assets/workshop/Fabrication_Facility_Exterior_1.jpg.asset
 import fabExt2 from "@/assets/workshop/Fabrication_Facility_Exterior_2.jpg.asset.json";
 import wingA from "@/assets/workshop/Workshop_Floor_Area_Wing_A.png.asset.json";
 import floor from "@/assets/workshop/Workshop_Floor_Area.png.asset.json";
+import wingB1 from "@/assets/workshop/Wing_B1.jpg.asset.json";
+import wingB2 from "@/assets/workshop/Wing_B2.jpg.asset.json";
+import wingB3 from "@/assets/workshop/Wing_B3.jpg.asset.json";
 
 type Shot = {
   title: string;
@@ -36,6 +39,24 @@ const shots: Shot[] = [
     description:
       "The main workshop floor featuring a full line-up of engine lathes, milling and shaping machines used across ESTA's practical modules.",
     src: floor.url,
+  },
+  {
+    title: "Wing B1",
+    description:
+      "Wing B1 of the fabrication hall, showcasing the sheet metal folding machine, hydraulic press, pillar drills and bench vices arranged for hands-on metalwork training.",
+    src: wingB1.url,
+  },
+  {
+    title: "Wing B2",
+    description:
+      "Wing B2 featuring the sheet metal rolling machine in the foreground with pillar drilling machines and workbenches extending into the main machining bay.",
+    src: wingB2.url,
+  },
+  {
+    title: "Wing B3",
+    description:
+      "Wing B3 equipped with a MIG welder, shaping machine, hydraulic presses and a pedestal grinder — configured for welding, forming and finishing practicals.",
+    src: wingB3.url,
   },
 ];
 
