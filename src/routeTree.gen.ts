@@ -9,71 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TuitionRouteImport } from './routes/tuition'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ProgramsRouteImport } from './routes/programs'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CametRouteImport } from './routes/camet'
-import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as GalleryIndexRouteImport } from './routes/gallery.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApplicationReceivedRouteImport } from './routes/application-received'
+import { Route as CametRouteImport } from './routes/camet'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TuitionRouteImport } from './routes/tuition'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
-import { Route as GalleryWorkshopRouteImport } from './routes/gallery.workshop'
-import { Route as GalleryTrainingRouteImport } from './routes/gallery.training'
-import { Route as GalleryEquipmentRouteImport } from './routes/gallery.equipment'
-import { Route as AboutInstructorsRouteImport } from './routes/about.instructors'
-import { Route as AboutFounderRouteImport } from './routes/about.founder'
-import { Route as AboutDirectorSvesRouteImport } from './routes/about.director-sves'
-import { Route as AboutDirectorSsesRouteImport } from './routes/about.director-sses'
 import { Route as AboutDirectorSaasRouteImport } from './routes/about.director-saas'
+import { Route as AboutDirectorSsesRouteImport } from './routes/about.director-sses'
+import { Route as AboutDirectorSvesRouteImport } from './routes/about.director-sves'
+import { Route as AboutFounderRouteImport } from './routes/about.founder'
+import { Route as AboutInstructorsRouteImport } from './routes/about.instructors'
+import { Route as GalleryIndexRouteImport } from './routes/gallery.index'
+import { Route as GalleryEquipmentRouteImport } from './routes/gallery.equipment'
+import { Route as GalleryTrainingRouteImport } from './routes/gallery.training'
+import { Route as GalleryWorkshopRouteImport } from './routes/gallery.workshop'
 
-const TuitionRoute = TuitionRouteImport.update({
-  id: '/tuition',
-  path: '/tuition',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsRoute = ProgramsRouteImport.update({
-  id: '/programs',
-  path: '/programs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CametRoute = CametRouteImport.update({
-  id: '/camet',
-  path: '/camet',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApplicationReceivedRoute = ApplicationReceivedRouteImport.update({
-  id: '/application-received',
-  path: '/application-received',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -81,49 +41,59 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ApplicationReceivedRoute = ApplicationReceivedRouteImport.update({
+  id: '/application-received',
+  path: '/application-received',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GalleryIndexRoute = GalleryIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => GalleryRoute,
+const CametRoute = CametRouteImport.update({
+  id: '/camet',
+  path: '/camet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TuitionRoute = TuitionRouteImport.update({
+  id: '/tuition',
+  path: '/tuition',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AboutRoute,
 } as any)
-const GalleryWorkshopRoute = GalleryWorkshopRouteImport.update({
-  id: '/workshop',
-  path: '/workshop',
-  getParentRoute: () => GalleryRoute,
-} as any)
-const GalleryTrainingRoute = GalleryTrainingRouteImport.update({
-  id: '/training',
-  path: '/training',
-  getParentRoute: () => GalleryRoute,
-} as any)
-const GalleryEquipmentRoute = GalleryEquipmentRouteImport.update({
-  id: '/equipment',
-  path: '/equipment',
-  getParentRoute: () => GalleryRoute,
-} as any)
-const AboutInstructorsRoute = AboutInstructorsRouteImport.update({
-  id: '/instructors',
-  path: '/instructors',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutFounderRoute = AboutFounderRouteImport.update({
-  id: '/founder',
-  path: '/founder',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutDirectorSvesRoute = AboutDirectorSvesRouteImport.update({
-  id: '/director-sves',
-  path: '/director-sves',
+const AboutDirectorSaasRoute = AboutDirectorSaasRouteImport.update({
+  id: '/director-saas',
+  path: '/director-saas',
   getParentRoute: () => AboutRoute,
 } as any)
 const AboutDirectorSsesRoute = AboutDirectorSsesRouteImport.update({
@@ -131,10 +101,40 @@ const AboutDirectorSsesRoute = AboutDirectorSsesRouteImport.update({
   path: '/director-sses',
   getParentRoute: () => AboutRoute,
 } as any)
-const AboutDirectorSaasRoute = AboutDirectorSaasRouteImport.update({
-  id: '/director-saas',
-  path: '/director-saas',
+const AboutDirectorSvesRoute = AboutDirectorSvesRouteImport.update({
+  id: '/director-sves',
+  path: '/director-sves',
   getParentRoute: () => AboutRoute,
+} as any)
+const AboutFounderRoute = AboutFounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutInstructorsRoute = AboutInstructorsRouteImport.update({
+  id: '/instructors',
+  path: '/instructors',
+  getParentRoute: () => AboutRoute,
+} as any)
+const GalleryIndexRoute = GalleryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GalleryRoute,
+} as any)
+const GalleryEquipmentRoute = GalleryEquipmentRouteImport.update({
+  id: '/equipment',
+  path: '/equipment',
+  getParentRoute: () => GalleryRoute,
+} as any)
+const GalleryTrainingRoute = GalleryTrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => GalleryRoute,
+} as any)
+const GalleryWorkshopRoute = GalleryWorkshopRouteImport.update({
+  id: '/workshop',
+  path: '/workshop',
+  getParentRoute: () => GalleryRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -291,67 +291,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tuition': {
-      id: '/tuition'
-      path: '/tuition'
-      fullPath: '/tuition'
-      preLoaderRoute: typeof TuitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs': {
-      id: '/programs'
-      path: '/programs'
-      fullPath: '/programs'
-      preLoaderRoute: typeof ProgramsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/camet': {
-      id: '/camet'
-      path: '/camet'
-      fullPath: '/camet'
-      preLoaderRoute: typeof CametRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/application-received': {
-      id: '/application-received'
-      path: '/application-received'
-      fullPath: '/application-received'
-      preLoaderRoute: typeof ApplicationReceivedRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -361,19 +305,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/application-received': {
+      id: '/application-received'
+      path: '/application-received'
+      fullPath: '/application-received'
+      preLoaderRoute: typeof ApplicationReceivedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/gallery/': {
-      id: '/gallery/'
-      path: '/'
-      fullPath: '/gallery/'
-      preLoaderRoute: typeof GalleryIndexRouteImport
-      parentRoute: typeof GalleryRoute
+    '/camet': {
+      id: '/camet'
+      path: '/camet'
+      fullPath: '/camet'
+      preLoaderRoute: typeof CametRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tuition': {
+      id: '/tuition'
+      path: '/tuition'
+      fullPath: '/tuition'
+      preLoaderRoute: typeof TuitionRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/about/': {
       id: '/about/'
@@ -382,46 +375,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof AboutRoute
     }
-    '/gallery/workshop': {
-      id: '/gallery/workshop'
-      path: '/workshop'
-      fullPath: '/gallery/workshop'
-      preLoaderRoute: typeof GalleryWorkshopRouteImport
-      parentRoute: typeof GalleryRoute
-    }
-    '/gallery/training': {
-      id: '/gallery/training'
-      path: '/training'
-      fullPath: '/gallery/training'
-      preLoaderRoute: typeof GalleryTrainingRouteImport
-      parentRoute: typeof GalleryRoute
-    }
-    '/gallery/equipment': {
-      id: '/gallery/equipment'
-      path: '/equipment'
-      fullPath: '/gallery/equipment'
-      preLoaderRoute: typeof GalleryEquipmentRouteImport
-      parentRoute: typeof GalleryRoute
-    }
-    '/about/instructors': {
-      id: '/about/instructors'
-      path: '/instructors'
-      fullPath: '/about/instructors'
-      preLoaderRoute: typeof AboutInstructorsRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/founder': {
-      id: '/about/founder'
-      path: '/founder'
-      fullPath: '/about/founder'
-      preLoaderRoute: typeof AboutFounderRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/director-sves': {
-      id: '/about/director-sves'
-      path: '/director-sves'
-      fullPath: '/about/director-sves'
-      preLoaderRoute: typeof AboutDirectorSvesRouteImport
+    '/about/director-saas': {
+      id: '/about/director-saas'
+      path: '/director-saas'
+      fullPath: '/about/director-saas'
+      preLoaderRoute: typeof AboutDirectorSaasRouteImport
       parentRoute: typeof AboutRoute
     }
     '/about/director-sses': {
@@ -431,12 +389,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutDirectorSsesRouteImport
       parentRoute: typeof AboutRoute
     }
-    '/about/director-saas': {
-      id: '/about/director-saas'
-      path: '/director-saas'
-      fullPath: '/about/director-saas'
-      preLoaderRoute: typeof AboutDirectorSaasRouteImport
+    '/about/director-sves': {
+      id: '/about/director-sves'
+      path: '/director-sves'
+      fullPath: '/about/director-sves'
+      preLoaderRoute: typeof AboutDirectorSvesRouteImport
       parentRoute: typeof AboutRoute
+    }
+    '/about/founder': {
+      id: '/about/founder'
+      path: '/founder'
+      fullPath: '/about/founder'
+      preLoaderRoute: typeof AboutFounderRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/instructors': {
+      id: '/about/instructors'
+      path: '/instructors'
+      fullPath: '/about/instructors'
+      preLoaderRoute: typeof AboutInstructorsRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/gallery/': {
+      id: '/gallery/'
+      path: '/'
+      fullPath: '/gallery/'
+      preLoaderRoute: typeof GalleryIndexRouteImport
+      parentRoute: typeof GalleryRoute
+    }
+    '/gallery/equipment': {
+      id: '/gallery/equipment'
+      path: '/equipment'
+      fullPath: '/gallery/equipment'
+      preLoaderRoute: typeof GalleryEquipmentRouteImport
+      parentRoute: typeof GalleryRoute
+    }
+    '/gallery/training': {
+      id: '/gallery/training'
+      path: '/training'
+      fullPath: '/gallery/training'
+      preLoaderRoute: typeof GalleryTrainingRouteImport
+      parentRoute: typeof GalleryRoute
+    }
+    '/gallery/workshop': {
+      id: '/gallery/workshop'
+      path: '/workshop'
+      fullPath: '/gallery/workshop'
+      preLoaderRoute: typeof GalleryWorkshopRouteImport
+      parentRoute: typeof GalleryRoute
     }
   }
 }
@@ -494,3 +494,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

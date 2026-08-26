@@ -35,4 +35,34 @@ export const facilitators: Facilitator[] = [
     years: "13+ years experience",
     image: oladimeji.url,
   },
+  {
+    name: "Mr. David Okonkwo",
+    role: "Renewable Energy Specialist",
+    years: "8+ years experience",
+    image: "/images/instructor-1.jpg",
+  },
+  {
+    name: "Engr. Samuel Nnamdi",
+    role: "Instrumentation & Control Engineer",
+    years: "12+ years experience",
+    image: "/images/instructor-2.jpg",
+  },
+  {
+    name: "Mr. Adeola Fashola",
+    role: "Plumbing & Piping Instructor",
+    years: "10+ years experience",
+    image: "/images/instructor-3.jpg",
+  },
+  {
+    name: "Ms. Chinwe Eze",
+    role: "Engineering Design Consultant",
+    years: "7+ years experience",
+    image: "/images/instructor-4.jpg",
+  },
+  {
+    name: "Engr. Chukwudi Okafor",
+    role: "Industrial Automation Expert",
+    years: "14+ years experience",
+    image: "/images/instructor-5.jpg",
+  },
 ];
